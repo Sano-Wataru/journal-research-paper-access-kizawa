@@ -1,35 +1,16 @@
 ﻿We proposed an edge-computing system that estimates the activity levels of people working in office environments using a LiDAR-sensor network.  
 
-% 
-\deleted{The estimation results demonstrated that the estimation  accuracy of activity levels significantly improved by using  multiple features, including 3D features, as inputs.}
-\begin{revisedblock}
-%
 The estimation results demonstrated that three-dimensional features derived from point-cloud data are effective for activity-level estimation.
   %
   The XGBoost model achieved its highest accuracy when all features were used as inputs.
-\end{revisedblock}
 % 
 To validate the system, experiments were conducted in an office environment with multiple participants. 
 % 
 The collected point-cloud data were transformed into statistical features that represented different aspects of participants' movements. 
 % 
 To estimate activity levels, we constructed two types of machine learning models that used either single point-cloud features or all features.  
-% 
-\begin{deletedblock} 
-% 
-For short-video data, the models incorporating all features achieved higher accuracy compared with those using single features, verifying the effectiveness of employing multiple 3D characteristics for activity level estimation.  
-%
-Furthermore, for short-video data, we considered the impact of clustering instability on the estimation accuracy.  
-%
-For long-video data, the effectiveness of utilizing multiple features was validated through feature selection, specifically by detecting and excluding features exhibiting anomalous distributions.  
-%
-Analysis of feature distributions, conducted across both short and long video data, revealed that the effectiveness of certain features is indeed influenced by the duration of the activity.
-\end{deletedblock}
-\begin{revisedblock}
-%
 For the XGBoost model, incorporating all features achieved higher accuracy than any single-feature model.
 %
 For the RF model, image-based 50th percentile values achieved the highest accuracy.
 %
 We considered the impact of clustering instability on the estimation accuracy.
-\end{revisedblock}

@@ -39,16 +39,14 @@ Their system was able to detect and track individuals by placing four IP cameras
 %4th paragraph
 The aforementioned studies have the following challenges:
 studies using wearable devices have not considered the discomfort and burden associated with wearing such devices, and contain potential privacy risk.
-\deleted{In response to the above challenges, our study investigates a system that estimates activity levels solely through 3D-sensors, without the need for wearable or other attached devices.}
-\revised{In response to the above challenges, our study investigates a system that estimates activity levels during deskwork.
-The system infers activity levels solely from 3D-sensor data, without the need for wearable or other attached devices.}
+In response to the above challenges, our study investigates a system that estimates activity levels during deskwork.
+The system infers activity levels solely from 3D-sensor data, without the need for wearable or other attached devices.
 
 %5th paragraph
 % 提案システム
 We propose a system that estimates activity levels of people working in office environments using a LiDAR sensor network.
   % 提案システムの目的
-  \revised{The system infers activity levels from spatial features extracted from} 3D point-cloud data.
-  \begin{revisedblock}
+  The system infers activity levels from spatial features extracted from 3D point-cloud data.
   % 「活動レベル」の定義
   We define activity level as the degree of concentration. 
     %
@@ -59,7 +57,6 @@ We propose a system that estimates activity levels of people working in office e
     Concentration is accompanied by active movements.
     %
     The active movements appear as dynamic patterns in the 3D spatial data collected via LiDAR sensors.
-  \end{revisedblock}
   % 提案システムのフォーカス
   Our study focuses on developing an activity level estimation system for PC-based deskwork. 
     %
@@ -74,10 +71,9 @@ The system collects point-cloud data of people at work.
   The system generates a machine-learning model using the features as input to estimate the activity levels of people during the deskwork.
 We conducted evaluation experiments with a PC deskwork scenario to assess the system.
 %
-We collected point-cloud data of people during \deleted{different lengths of }educational video viewing using a network composed of multiple LiDAR sensors.
+We collected point-cloud data of people during educational video viewing using a network composed of multiple LiDAR sensors.
 %
-\deleted{We obtained several indicators representing activity levels of people during work using tests and questionnaires on the educational video content.}
-\revised{We obtained several indicators representing the activity levels of people during work using objective evaluation and subjective evaluation of the educational video content.}
+We obtained several indicators representing the activity levels of people during work using objective evaluation and subjective evaluation of the educational video content.
 We created labels for activity indicators using clustering and generated binary labels on the basis of the consistency of labels among subjects.
 We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.
 

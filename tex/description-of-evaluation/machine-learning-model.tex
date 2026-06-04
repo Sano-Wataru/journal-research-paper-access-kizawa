@@ -3,8 +3,7 @@ A machine-learning classification approach was used to estimate the activity lev
 %
 Two machine-learning models were adopted: a random forest (RF) and an extreme gradient boosting (XGBoost) classifier \cite{ho1995random, 10.1145/2939672.2939785}.
 %
-\deleted{For each model, we conducted training and evaluation using both short-video data and long-video data in distinct scenarios.}
-\revised{Training and evaluation were conducted using short-video data for each of the models.}
+Training and evaluation were conducted using short-video data for each of the models.
 %
 RF is an ensemble-learning technique that combines multiple decision trees, enabling the evaluation of feature importance when making predictions.
 %
@@ -12,28 +11,18 @@ XGBoost is also an ensemble-based method that leverages gradient boosting to ach
 %
 For implementation, the scikit-learn application programming interface (API), a Python library was used \cite{pedregosa2011scikit,buitinck2013api}.
 %
-\deleted{We treated numerical features created from point-cloud data as input.}
-\revised{For each dataset pair, the element-wise absolute differences of point-cloud features were used as input.}
+For each dataset pair, the element-wise absolute differences of point-cloud features were used as input.
   %
-  \deleted{We treated ML derived from the GL of activity levels as output.}
-  \revised{ML derived from comparing the GL of the two datasets in each pair was used as output.}
+  ML derived from comparing the GL of the two datasets in each pair was used as output.
   %
   The ML derived from GL is regarded as the ground truth, and the ML estimated by the model based on the features is regarded as the estimated result.
 %
-\begin{deletedblock}
-Specifically, with short-video data only, we randomly split the dataset into two parts: 80\% for training and 20\% for evaluation.
-%
-To assess the model's generalization capability in a separate scenario, we trained the models using the entire short-video dataset and evaluated their performance on the long-video dataset.
-\end{deletedblock}
-\revised{The dataset was randomly split into two parts: 80\% for training and 20\% for evaluation.}
+The dataset was randomly split into two parts: 80\% for training and 20\% for evaluation.
 %
 Hyperparameter tuning via grid search was conducted to optimize the performance of each model \cite{10.5555/2188385.2188395}.
   %
-  \revised{The F1 score was used as the optimization metric}.
+  The F1 score was used as the optimization metric.
   %
-  \deleted{Specifically, we systematically explored predefined parameter sets (e.g., the number of estimators and maximum tree depth) for both RF and XGBoost, and selected the final parameters that yielded the highest cross-validation scores.}
-  \begin{revisedblock}
   Predefined parameter sets (e.g., the number of estimators and maximum tree depth) were explored for both RF and XGBoost.
   %
   The final parameters were selected to maximize the cross-validation F1 score.
-  \end{revisedblock}
