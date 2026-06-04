@@ -1,0 +1,195 @@
+﻿\begin{table}[!b]
+  \centering
+  \caption{Confusion matrices of RF models using long-video data. GT means ground truth, while ER means estimated result; diagonal components are correct.}
+  \label{matrix_rf_test}
+  \begin{tabular}{cc}
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-50th}
+      \label{matrix_rf_test_a}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{22} & 9 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{10} & 4 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-90th}
+      \label{matrix_rf_test_b}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{3} & 28 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{1} & 13 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-50th}
+      \label{matrix_rf_test_c}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{31} & 0 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{14} & 0 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-90th}
+      \label{matrix_rf_test_d}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{31} & 0 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{14} & 0 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \multicolumn{2}{c}{
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{All features}
+      \label{matrix_rf_test_e}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{9} & 22 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{2} & 12 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    }
+  \end{tabular}
+\end{table}
+
+\begin{table}[b]
+  \centering
+  \caption{Accuracy using RF (long-video data)}
+    \begin{tabular}{clll} \hline
+      Feature       & Accuracy & FNR   & FPR   \\ \hline \hline
+      Image-50th    & 0.578    & 0.714 & 0.290  \\
+      Image-90th    & 0.356    & 0.071 & 0.903 \\
+      Centroid-50th & 0.689    & 1.000 & 0.000 \\
+      Centroid-90th & 0.689    & 1.000 & 0.000 \\
+      All           & 0.467    & 0.143 & 0.710  \\ \hline
+    \end{tabular}
+  \label{result_rf_test}
+\end{table}
+
+\begin{table}[b]
+  \centering
+  \caption{Confusion matrices of XGBoost models using long-video data. GT means ground truth, while ER means estimated result; diagonal components are correct.}
+  \label{matrix_xg_test}
+  \begin{tabular}{cc}
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-50th}
+      \label{matrix_xg_test_a}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{24} & 7 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{10} & 4 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-90th}
+      \label{matrix_xg_test_b}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{5} & 26 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{1} & 13 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-50th}
+      \label{matrix_xg_test_c}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{28} & 3 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{13} & 1 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-90th}
+      \label{matrix_xg_test_d}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{31} & 0 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{14} & 0 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \multicolumn{2}{c}{
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{All features}
+      \label{matrix_xg_test_e}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{7} & 24 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{4} & 10 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    }
+  \end{tabular}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+	\caption{Accuracy using XGBoost (long-video data)}
+		\begin{tabular}{clll} \hline
+			Feature       & Accuracy & FNR   & FPR   \\ \hline \hline
+			Image-50th    & 0.644    & 0.286 & 0.387 \\
+			Image-90th    & 0.422    & 0.214 & 0.742 \\
+			Centroid-50th & 0.733    & 0.571 & 0.129 \\
+			Centroid-90th & 0.622    & 0.786 & 0.194 \\
+			All           & 0.444    & 0.214 & 0.710 \\ \hline
+		\end{tabular}
+	\label{result_xg_test}
+\end{table}

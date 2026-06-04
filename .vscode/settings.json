@@ -1,0 +1,80 @@
+{
+  // ---------- Language ----------
+
+  "[tex]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 2
+  },
+
+  "[latex]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.tabSize": 2
+  },
+
+  "[bibtex]": {
+    "editor.tabSize": 2
+  },
+
+  // ---------- LaTeX Workshop ----------
+
+  "latex-workshop.intellisense.package.enabled": true,
+
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof",
+    "*.lot",
+    "*.out",
+    "*.toc",
+    "*.acn",
+    "*.acr",
+    "*.alg",
+    "*.glg",
+    "*.glo",
+    "*.gls",
+    "*.ist",
+    "*.fls",
+    "*.log",
+    "*.fdb_latexmk",
+    "*.snm",
+    "*.nav",
+    "*.dvi",
+    "*.synctex.gz"
+  ],
+
+  "latex-workshop.latex.outDir": "out",
+
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-silent",
+        "-pdf",
+        "-synctex=1",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (pdflatex)",
+      "tools": ["latexmk"]
+    }
+  ],
+
+  "latex-workshop.latex.recipe.default": "latexmk (pdflatex)",
+
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "terminal.integrated.inheritEnv": false,
+  "vscode-office.editorTheme": "One Dark",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "geminicodeassist.inlineSuggestions.enableAuto": false
+}

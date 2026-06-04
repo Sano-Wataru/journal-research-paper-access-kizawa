@@ -1,0 +1,89 @@
+﻿\begin{table}[!b]
+	\centering
+	\caption{Wasserstein distance of features}
+	\begin{tabular}{cc}
+		\hline
+		Feature         & Wasserstein Distance \\ \hline \hline
+		Image-90th (x)  & 0.454976 \\
+		Image-90th (y)  & 0.607920 \\
+		Image-90th (z)  & 0.242980 \\
+		Image-50th (x)  & 0.312036 \\
+		Image-50th (y)  & 0.140506 \\
+		Image-50th (z)  & 0.161262 \\
+		Centroid-50th   & 0.319900 \\
+		Centroid-90th   & 0.248943 \\ \hline
+	\end{tabular}
+	\label{tab:wasserstein_distance}
+\end{table}
+
+\begin{table}[!b]
+	\centering
+	\caption{KS Statistic of features with p-values}
+	\begin{tabular}{ccc}
+		\hline
+		Feature        & KS Statistic    & KS p-value \\ \hline \hline
+		Image-90th (x) & 0.750000 		 & 0.095238   \\
+		Image-90th (y) & 1.000000 		 & 0.009524   \\
+		Image-90th (z) & 0.333333 		 & 0.923810   \\
+		Image-50th (x) & 0.583333 		 & 0.295238   \\
+		Image-50th (y) & 0.250000 		 & 0.995238   \\
+		Image-50th (z) & 0.500000 	     & 0.552381   \\
+		Centroid-50th  & 0.666667 		 & 0.180952   \\
+		Centroid-90th  & 0.666667 		 & 0.180952   \\  \hline
+	\end{tabular}
+	\label{tab:ks_results}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+	\caption{Estimation results using multiple features before and after excluding image-based 90th percentile values}
+	\resizebox{0.6\columnwidth}{!}{%
+		\begin{tabular}{clll} \hline
+			Model                      		  & Accuracy & FNR   & FPR   \\ \hline \hline
+			RF before removing features       & 0.444    & 0.143 & 0.742 \\
+			RF after removing features        & 0.600    & 0.643 & 0.290 \\
+			XGBoost before removing features  & 0.444    & 0.214 & 0.710 \\
+			XGBoost after removing features   & 0.667    & 0.571 & 0.226 \\  \hline
+		\end{tabular}
+	}
+	\label{tab:result_re_zncc90}
+\end{table}
+
+%
+In this section, we explore the reasons for the decrease in estimation accuracy observed in long-video data when utilizing all features.
+% 
+To identify potential distribution anomalies specific to long-video data, we examined the CDF for each feature within this dataset before and after data extension.   
+
+% 
+Table \ref{tab:wasserstein_distance} shows the Wasserstein distance, quantifying the dissimilarity between CDFs, calculated for each feature in the long-video dataset before and after data augmentation \cite{panaretos2019statistical}.
+% 
+Normalization was applied to each feature prior to distance calculation. 
+% 
+Analogous to the method in Section \ref{sec:feature-distribution}, we computed CDFs for the long-video data both before and after augmentation, and subsequently calculated the Wasserstein distance between these CDFs for each feature.
+% 
+Table \ref{tab:ks_results} shows the results of the Kolmogorov-Smirnov (KS) test, a non-parametric statistical test for assessing distributional equivalence \cite{berger2014kolmogorov}, conducted on the CDFs of the long-video dataset before and after augmentation.
+% 
+The KS statistic and corresponding p-values are reported for each feature.
+% 
+Features were normalized before applying the KS test.
+% 
+For each feature, we tested the null hypothesis that the CDFs before and after data augmentation are drawn from the same distribution, using a significance level of 0.05. 
+% 
+For image-based 90th percentile features, the KS statistic reached 1.0 with a p-value of 0.01.
+% 
+The outcome led to rejection of the null hypothesis, confirming a statistically significant difference in CDF distributions before and after data augmentation for these specific features. 
+% 
+In contrast, for other features, KS statistics remained below 0.75, and p-values exceeded 0.05, failing to reject the null hypothesis and suggesting no significant distributional difference.   
+
+% 
+The above indicate that, in long-video data, specific features exhibit anomalous distributions when comparing data before and after augmentation.
+% 
+The distributional anomaly was particularly pronounced for image-based 90th percentile values.
+% 
+We subsequently excluded this feature and re-evaluated activity level estimation using all remaining features. 
+% 
+Table \ref{tab:result_re_zncc90} presents the evaluation results of models both with and without the exclusion of image-based 90th percentile values.
+% 
+We confirmed a consistent improvement in activity level estimation accuracy for both RF and XGBoost models upon this feature exclusion.  
+% 
+These findings suggest that while leveraging multiple features remains effective for activity level estimation, mirroring observations from short-video data models, careful feature selection is crucial for optimal performance.

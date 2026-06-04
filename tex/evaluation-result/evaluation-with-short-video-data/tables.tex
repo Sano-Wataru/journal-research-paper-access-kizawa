@@ -1,0 +1,233 @@
+﻿\begin{table}[!b]
+  \centering
+  \caption{Confusion matrices of RF models using short-video data. GT means ground truth, while ER means estimated result; diagonal components are correct.}
+  \label{matrix_rf_train}
+
+  \begin{tabular}{cc}
+    \begin{subtable}{0.48\columnwidth} 
+      \centering
+      \caption{Image-50th}
+      \label{matrix_rf_train_a}
+      \scriptsize 
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{98} & 30 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{59} & 23 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-90th}
+      \label{matrix_rf_train_b}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{72} & 56 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{42} & 40 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-50th}
+      \label{matrix_rf_train_c}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{65} & 63 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{40} & 42 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-90th}
+      \label{matrix_rf_train_d}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{50} & 78 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{33} & 49 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \multicolumn{2}{c}{
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{All features}
+      \label{matrix_rf_train_e}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{78} & 50 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{42} & 40 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    }
+  \end{tabular}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+  \caption{Accuracy using RF (short-video data)}
+    \begin{tabular}{clll} \hline
+      Feature         & Accuracy & FNR   & FPR   \\ \hline \hline
+      Image-50th      & 0.576    & 0.720 & 0.234 \\
+      Image-90th      & 0.533    & 0.512 & 0.438 \\
+      Centroid-50th   & 0.510    & 0.488 & 0.492 \\
+      Centroid-90th   & 0.471    & 0.402 & 0.609 \\
+      All             & 0.562    & 0.512 & 0.391 \\ \hline
+    \end{tabular}
+  \label{result_rf_train}
+\end{table}
+
+\begin{table}[!b]
+	\centering
+	\caption{Feature importance of the RF model with all features as input}
+	\begin{tabular}{clc}
+		\hline
+		Rank & Feature      & Feature Importance \\ \hline \hline
+		1    & Centroid-50th  & 0.170            \\
+		2    & Centroid-90th  & 0.167            \\
+		3    & Image-90th (x) & 0.122            \\
+		4    & Image-50th (z) & 0.114            \\
+		5    & Image-90th (z) & 0.112            \\
+		6    & Image-90th (y) & 0.111            \\
+		7    & Image-50th (y) & 0.106            \\
+		8    & Image-50th (x) & 0.097            \\ \hline
+	\end{tabular}
+	\label{feature_importance_rf}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+  \caption{Confusion matrices of XGBoost models using short-video data. GT means ground truth, while ER means estimated result; diagonal components are correct.}
+  \label{matrix_xg_train}
+
+  \begin{tabular}{cc}
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-50th}
+      \label{matrix_xg_train_a}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{86} & 42 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{55} & 27 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Image-90th}
+      \label{matrix_xg_train_b}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{67} & 61 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{46} & 36 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-50th}
+      \label{matrix_xg_train_c}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{77} & 51 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{46} & 36 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    &
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{Centroid-90th}
+      \label{matrix_xg_train_d}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{62} & 66 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{32} & 50 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    \\
+    \multicolumn{2}{c}{
+    \begin{subtable}{0.48\columnwidth}
+      \centering
+      \caption{All features}
+      \label{matrix_xg_train_e}
+      \scriptsize
+      \begin{tabular}{|lc|cc|}
+        \hline
+        \multicolumn{2}{|l|}{\multirow{2}{*}{}} & \multicolumn{2}{c|}{ER} \\ \cline{3-4}
+        \multicolumn{2}{|l|}{} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{1} \\ \hline
+        \multicolumn{1}{|c|}{\multirow{2}{*}{GT}} & 0 & \multicolumn{1}{c|}{81} & 47 \\ \cline{2-4}
+        \multicolumn{1}{|c|}{} & 1 & \multicolumn{1}{c|}{39} & 43 \\ \hline
+      \end{tabular}
+      \vspace{5pt}
+    \end{subtable}
+    }
+  \end{tabular}
+\end{table}
+
+\begin{table}[!b]
+  \centering
+	\caption{Accuracy using XGBoost (short-video data)}
+		\begin{tabular}{clll} \hline
+			Feature       & Accuracy & FNR   & FPR    \\ \hline \hline
+			Image-50th    & 0.538    & 0.671 & 0.328  \\
+			Image-90th    & 0.490    & 0.561 & 0.477  \\
+			Centroid-50th & 0.538    & 0.561 & 0.398  \\
+			Centroid-90th & 0.533    & 0.390 & 0.516  \\
+			All           & 0.590    & 0.476 & 0.367  \\ \hline
+		\end{tabular}
+	\label{result_xg_train}
+\end{table}
+
+\begin{table}[!b]
+	\centering
+	\caption{Feature importance of the XGBoost model with all features as input}
+	\begin{tabular}{clc}
+		\hline
+		Rank & Feature        & Feature Importance \\ \hline \hline
+		1    & Centroid-50th  & 0.278              \\
+		2    & Centroid-90th  & 0.166              \\
+		3    & Image-50th (z) & 0.110              \\
+		4    & Image-90th (z) & 0.094              \\
+		5    & Image-50th (y) & 0.092              \\
+		6    & Image-50th (x) & 0.089              \\
+		7    & Image-90th (y) & 0.087              \\
+		8    & Image-90th (x) & 0.083              \\ \hline
+	\end{tabular}
+	\label{feature_importance_xg}
+\end{table}

@@ -1,0 +1,81 @@
+\begin{figure}[t]
+  \centerline{\includegraphics[width=\linewidth]{img/kmeans.png}}
+  \caption{K-means result}
+  \label{k-means_train}
+\end{figure}
+
+%1st paragraph
+% 活動レベルの位置づけ
+The activity levels were treated as a measure that integrates the subjective and objective perspectives.
+  %
+  The two indicators were converted into numerical labels by clustering.
+  %
+  The labels were defined as the group labels (GL).
+    %
+    GL represents the clustering results that capture multiple activity levels.
+% k-meansの手順
+K-means was used as a clustering method \cite{krishna1999genetic}, which enables samples to be split into $k$ groups.
+  %
+  The number of clusters was set to $k=3$.
+% k-meansの結果
+Fig.~\ref{k-means_train} shows the clustering results.
+% 点群データセットへのGLの割り当て
+A GL cluster was assigned to each point-cloud dataset as an activity-level indicator.
+
+\begin{revisedblock}
+%2nd paragraph
+% データ拡張の実施
+Data extension was performed to increase the available data samples.
+  % データ拡張の恩恵
+  It is necessary to compensate for the shortfall of point-cloud datasets.
+  % データ拡張の理由
+  The datasets integrating both video viewing and test-taking are not available in the public domain.
+% データ拡張の方法
+The datasets were extended by generating pairs of point-cloud datasets based on relational similarity~\cite{shinkuma2019relational}.
+  % ペアの生成
+  The point-cloud dataset pairs were formed from the $N=110$ point-cloud datasets ($\binom{N}{2}=5995$ pairs) without duplication.
+  % ペアの特徴ベクトル間の絶対差分の計算
+  The input features were computed as the element-wise absolute value of the difference between the feature vectors of each of the point-cloud dataset pairs.
+\end{revisedblock}
+
+\begin{revisedblock}
+%3rd paragraph
+% MLの定義
+Agreement and disagreement between the GL of the two datasets in each of the point-cloud datasets pairs are defined as matching labels (ML).
+  % MLの形式
+  ML is represented as a binary label.
+\end{revisedblock}
+
+\begin{deletedblock}
+In our evaluation experiments, we found that point-cloud datasets integrating both video viewing and test-taking were essentially unavailable in the public domain, necessitating data extension to compensate for this shortfall.
+\end{deletedblock}
+
+\begin{deletedblock}
+%
+We extracted two datasets from the obtained 61 datasets.
+%
+The datasets were selected as unique combinations without duplication.
+%
+We generated new features from point-cloud features and activity-level measures of the extracted data.
+%
+We extended the datasets on the basis of the similarity 
+%
+Each point-cloud feature was converted to the absolute value of the difference between the feature values.
+%
+We extended the datasets on the basis of the similarity between participants\cite{shinkuma2019relational}.
+%
+The similarity is calculated as follows: correlations are calculated between participants based on features extracted from point-clouds.
+%
+A correlation matrix is calculated for each participant.
+%
+A distance between the correlation matrix of each participant is calculated.
+  %
+  The shorter distance indicates a higher similarity.
+%
+The activity levels were converted into binary labels for agreement and disagreement, referred to as matching labels (ML).
+%
+The ML were set to 1 for agreement and 0 for disagreement.
+%
+We obtained 1830 datasets.
+\end{deletedblock}
+

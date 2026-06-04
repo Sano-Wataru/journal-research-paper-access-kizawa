@@ -1,0 +1,30 @@
+﻿\begin{figure}[t]
+	\centerline{\includegraphics[width=\linewidth]{img/clustering.png}}
+	\caption{Stability verification of cluster assignment for short video dataset}
+	\label{fig:clustering-stability}
+\end{figure}
+
+%
+\deleted{We demonstrated in Section \ref{subsec:evaluation-short} that employing multiple features generated from three-dimensional point-cloud data is effective for estimation in the short-video dataset.}
+\revised{We demonstrated in Section \ref{subsec:evaluation-short} that three-dimensional point-cloud features are effective for activity-level estimation in the short-video dataset.
+	%
+	The XGBoost model achieved the highest accuracy when all features were used as inputs.}
+% 
+However, it was also hypothesized that clustering instability might partially explain why the improvement in estimation accuracy remained limited.
+% 
+To investigate this, the following procedure was conducted. 
+% 
+First, we applied k-means clustering ($k$=3) to the entire short-video dataset to establish a baseline clustering result.
+% 
+Next, we randomly removed one sample from the dataset and re-ran the clustering, repeating this removal-and-reclustering operation 10 times.
+% 
+This entire series of operations was repeated another ten times, and statistical values (mean and standard deviation) were calculated for the differences between the baseline clustering and the clustering results obtained after each random removal.
+% 
+Fig.~\ref{fig:clustering-stability} illustrates the number of changed cluster assignments.
+% 
+The horizontal axis represents the number of trials, while the vertical axis shows the mean and standard deviation of cluster changes. 
+% 
+Cluster changes were observed to range from approximately 20 to 40 in each trial, indicating a certain degree of variability in the clustering results.
+% 
+\deleted{In summary, our analysis confirms that clustering instability is indeed a contributing factor to the limited improvement in estimation accuracy, particularly when utilizing multiple features in long-video data.}
+\revised{In summary, our analysis confirms that clustering instability is indeed a contributing factor to the limited improvement in estimation accuracy when utilizing multiple features.}

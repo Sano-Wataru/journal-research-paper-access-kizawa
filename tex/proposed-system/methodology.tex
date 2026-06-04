@@ -1,0 +1,13 @@
+We use point-cloud data obtained from 3D-sensors.
+The format of point-cloud data consists of sets of 3D coordinates of points.
+Each point does not have individual characteristics.
+The number of frames contained in each dataset and the duration of each frame vary.
+We convert point-cloud data into numerical features.
+We extract regions where a target object exists from the data and transform the data with varying numbers of frames and frame durations into statistical features.
+The specific method is described in Section~\ref{sec:feature-creation}.
+Note that methods for identifying and extracting specific regions from 3D space are beyond the scope of this paper.
+
+We capture activity levels as multiple numerical indicators and group contributors on the basis of these indicators.
+We set labels to identify the groups and assign a label to each contributor according to their group.
+The specific method for labeling is detailed in Section~\ref{sec:labeling}.
+We evaluate the features used to estimate activity levels on the basis of the assigned labels.

@@ -1,0 +1,37 @@
+\begin{figure}[t]
+  \centerline{\includegraphics[width=\linewidth]{img/system_model.png}}
+  \caption{System model}
+  \label{systemmodel}
+\end{figure}
+
+Fig.~\ref{systemmodel} shows a system model of the proposed system.
+The phase of the proposed system switches between training and estimation.
+
+For the training phase, the proposed system consists of multiple 3D-sensor devices, an edge computer, a user device, an edge server, and a model database (DB).
+Each 3D-sensor device consists of a LiDAR unit and an edge device.
+The edge device consists of a converter, a filter, and a transmitter.
+The edge computer consists of a receiver and a merger, as presented by Akiyama et al.\ \cite{9789786}.
+The user device consists of an interface and a capturer.
+The edge server consists of a feature extractor, a feature information of point-cloud, a label creator, and a model constructor.
+The LiDAR unit acquires a stream of 3D data.
+The edge device converts the generated stream data into point-cloud data and executing filtering then sends the filtered data to the receiver.
+The receiver receives 3D point-cloud data from multiple 3D-sensor devices.
+The merger joins the point-cloud data aggregated by the receiver.
+The interface is operated by contributors to control and monitor the system.
+The capturer acquires indicators of an individual's activity level.
+The feature extractor creates multiple features from the data integrated by the merger.
+The feature information of the point-cloud retains the generated features.
+The label creator converts the obtained activity-level data into categorical data.
+The model constructor creates a machine-learning model that estimates activity levels using the features generated from the point-cloud data as inputs.
+The model constructor stores the machine-learning model in the model DB.
+
+For the estimation phase, the proposed system consists of multiple 3D-sensor devices, edge computer, and an edge server.
+Each 3D-sensor device consists of a LiDAR unit and an edge device.
+The edge computer consists of a receiver and a merger, similar to the training phase.
+The edge server consists of a feature extractor and an estimator.
+The LiDAR unit acquires 3D stream data of the space including the target person.
+The edge device converts the acquired stream data into point-cloud data, executes filtering, then sends it to the edge computer.
+The edge computer integrates the data received from each 3D-sensor device.
+The feature extractor generates multiple features from the point-cloud data integrated by the edge computer.
+The generated features are sent to the estimator.
+The estimator executes evaluations using the machine-learning model from the model DB.
