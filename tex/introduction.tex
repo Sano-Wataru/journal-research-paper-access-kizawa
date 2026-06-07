@@ -48,8 +48,6 @@ Yang et al.\ and Behera et al.\ relied on RGB cameras for person detection and t
 These sensing modalities share the burden or privacy concerns described above.}
 The aforementioned studies have the following challenges:
 studies using wearable devices have not considered the discomfort and burden associated with wearing such devices, and contain potential privacy risk.
-\deleted{In response to the above challenges, our study investigates a system that estimates activity levels during deskwork.
-The system infers activity levels solely from 3D-sensor data, without the need for wearable or other attached devices.}
 
 %4th paragraph
 % 提案システム
@@ -82,11 +80,11 @@ The system collects point-cloud data of people at work.
   The system generates a machine-learning model using the features as input to estimate the activity levels of people during the deskwork.
 We conducted evaluation experiments with a PC deskwork scenario to assess the system.
 %
-We collected point-cloud data of people during educational video viewing using a network composed of multiple LiDAR sensors.
+We collected point-cloud data of people during multiple short video viewing using a network composed of multiple LiDAR sensors.
 %
 We obtained several indicators representing the activity levels of people during work using objective evaluation and subjective evaluation of the educational video content.
 We created labels for activity indicators using clustering and generated binary labels on the basis of the consistency of labels among subjects.
-We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.
+We constructed multiple models using different feature types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.
 \end{deletedblock}
 \begin{revisedblock}
 %
@@ -104,18 +102,18 @@ Clustering was applied to the indicators to generate binary labels.
 %
 Numerical features represent 3D characteristics of point-cloud data, such as the spatial center of mass.
 %
-Binary matching labels (ML) were generated on the basis of group-label (GL) agreement between dataset pairs.
+Binary labels were generated on the basis of the consistency of clustered activity indicators among dataset pairs.
 %
-Multiple models using different feature-extraction methods were constructed and evaluated against the binary labels.
+Multiple models using different feature types were constructed, and their accuracy was evaluated using the binary labels.
 \end{revisedblock}
 
 %6th paragraph
-\deleted{We previously presented an edge computing system that estimates activity levels of people working in office environments using a LiDAR sensor network \cite{kizawa2023estimation}.
+We previously presented an edge computing system that estimates activity levels of people working in office environments using a LiDAR sensor network \cite{kizawa2023estimation}.
 Differently from the previous study, our study addresses estimation models using multiple features.
-The previous study characterized the collected point-cloud data using a single method and a statistical model as the estimation model and using linear correlation as the evaluation metric.}
-\revised{A previous edge computing system used a single feature-extraction method and a statistical model with linear correlation as the evaluation metric \cite{kizawa2023estimation}.
-The present study addresses estimation models using multiple features.}
-\revised{The previous study extracted a single statistical feature from point-cloud frame similarity and evaluated estimation using linear correlation \cite{kizawa2023estimation}.}
+The previous study characterized the collected point-cloud data using a single method and a statistical model as the estimation model and using linear correlation as the evaluation metric.
+% \revised{A previous edge computing system used a single feature-extraction method and a statistical model with linear correlation as the evaluation metric \cite{kizawa2023estimation}.
+% The present study addresses estimation models using multiple features.}
+% \revised{The previous study extracted a single statistical feature from point-cloud frame similarity and evaluated estimation using linear correlation \cite{kizawa2023estimation}.}
 
 %7th paragraph
 \deleted{Section~\ref{sec:related-works} provides an overview of related works.
