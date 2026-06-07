@@ -1,0 +1,25 @@
+---
+description: 原稿修正時の削除・追記マークアップ（\deleted / \revised）
+globs: tex/**/*.tex
+alwaysApply: false
+---
+
+# 原稿の修正マークアップ
+
+原稿（`tex/` 配下の `.tex`）を編集するとき、削除・追記は必ずマークアップで残す。生の削除・追記だけにしない。
+
+## 削除（既存文を取り除く場合）
+
+- **1文**（1つの `\deleted{...}` で収まる範囲）: `\deleted{...}`
+- **2文以上**、複数段落、環境をまたぐ塊: `\begin{deletedblock}...\end{deletedblock}`
+
+## 追記（新しい文を入れる場合）
+
+- **1文**: `\revised{...}`
+- **2文以上**、複数段落、環境をまたぐ塊: `\begin{revisedblock}...\end{revisedblock}`
+
+## 運用
+
+- 旧文を消して新文だけ残すのではなく、削除分は `\deleted` / `deletedblock`、追加分は `\revised` / `revisedblock` で明示する。
+- 1文の差し替えは、`\deleted{旧}` と `\revised{新}` を並べる。
+- マクロ定義は `tex/macros/revision.tex` を参照する。

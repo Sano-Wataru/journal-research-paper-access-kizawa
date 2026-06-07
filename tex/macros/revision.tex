@@ -1,1 +1,30 @@
-% Revision markup removed; macros no longer used.
+% Revision markup.
+% By default, deleted text is hidden so that the paper compacts correctly.
+% Set \showrevisionstrue to visualize revisions during drafting.
+\newif\ifshowrevisions
+\showrevisionsfalse
+% \showrevisionstrue
+
+% Inline markup
+\newcommand{\revised}[1]{\ifshowrevisions{\color[rgb]{0,0,1}#1}\else#1\fi}
+\newcommand{\deleted}[1]{\ifshowrevisions{\color[rgb]{1,0,0}#1}\else\relax\fi}
+
+% Block markup (strikethrough is not compatible with floats/citations)
+\NewEnviron{revisedblock}{%
+  \ifshowrevisions
+    \begingroup
+    \color[rgb]{0,0,1}%
+    \BODY
+    \endgroup
+  \else
+    \BODY
+  \fi
+}
+\NewEnviron{deletedblock}{%
+  \ifshowrevisions
+    \begingroup
+    \color[rgb]{1,0,0}%
+    \BODY
+    \endgroup
+  \fi
+}

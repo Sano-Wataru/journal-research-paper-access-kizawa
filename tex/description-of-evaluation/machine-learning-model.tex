@@ -3,13 +3,17 @@ A machine-learning classification approach was used to estimate the activity lev
 %
 Two machine-learning models were adopted: a random forest (RF) and an extreme gradient boosting (XGBoost) classifier \cite{ho1995random, 10.1145/2939672.2939785}.
 %
-Training and evaluation were conducted using short-video data for each of the models.
+\deleted{Training and evaluation were conducted using short-video data for each of the models.
 %
 RF is an ensemble-learning technique that combines multiple decision trees, enabling the evaluation of feature importance when making predictions.
 %
 XGBoost is also an ensemble-based method that leverages gradient boosting to achieve high predictive accuracy and efficiency.
 %
-For implementation, the scikit-learn application programming interface (API), a Python library was used \cite{pedregosa2011scikit,buitinck2013api}.
+For implementation, the scikit-learn application programming interface (API), a Python library was used \cite{pedregosa2011scikit,buitinck2013api}.}
+\revised{Training and evaluation used short-video data.
+RF and XGBoost were implemented using the scikit-learn application programming interface (API) \cite{pedregosa2011scikit,buitinck2013api}.}
+\revised{RF combines multiple decision trees and enables feature-importance evaluation during prediction \cite{ho1995random}.
+XGBoost applies gradient boosting for high predictive accuracy \cite{10.1145/2939672.2939785}.}
 %
 For each dataset pair, the element-wise absolute differences of point-cloud features were used as input.
   %
@@ -19,10 +23,12 @@ For each dataset pair, the element-wise absolute differences of point-cloud feat
 %
 The dataset was randomly split into two parts: 80\% for training and 20\% for evaluation.
 %
-Hyperparameter tuning via grid search was conducted to optimize the performance of each model \cite{10.5555/2188385.2188395}.
+\deleted{Hyperparameter tuning via grid search was conducted to optimize the performance of each model \cite{10.5555/2188385.2188395}.
   %
   The F1 score was used as the optimization metric.
   %
   Predefined parameter sets (e.g., the number of estimators and maximum tree depth) were explored for both RF and XGBoost.
   %
-  The final parameters were selected to maximize the cross-validation F1 score.
+  The final parameters were selected to maximize the cross-validation F1 score.}
+\revised{Hyperparameter tuning via grid search optimized the F1 score for each model \cite{10.5555/2188385.2188395}.}
+\revised{Predefined parameter sets for the number of estimators and maximum tree depth were explored for both RF and XGBoost.}

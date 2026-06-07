@@ -1,4 +1,4 @@
-﻿Table \ref{matrix_xg_train} shows the confusion matrices of five XGBoost models, four with a single feature and one with all features. 
+﻿\deleted{Table \ref{matrix_xg_train} shows the confusion matrices of five XGBoost models, four with a single feature and one with all features. 
 % 
 Table \ref{matrix_xg_train_a} shows the confusion matrix of the model with image-based 50th percentile values as input features. 
 % 
@@ -42,4 +42,14 @@ It was found that centroid features were effective in reducing misclassification
 % 
 It was also found that the model using all features achieved the highest accuracy among the five models. 
 %
-From these results, we confirmed that employing a diverse set of features derived from three-dimensional information is effective for estimating activity levels in short-video datasets when using an XGBoost-based model.
+From these results, we confirmed that employing a diverse set of features derived from three-dimensional information is effective for estimating activity levels in short-video datasets when using an XGBoost-based model.}
+\revised{Table~\ref{matrix_xg_train} shows confusion matrices of five XGBoost models: four with a single feature and one with all features.
+Table~\ref{result_xg_train} shows the evaluation metrics.
+The all-feature model achieved the highest accuracy.
+The model with centroid 90th percentile values achieved the lowest FNR.
+Table~\ref{feature_importance_xg} shows feature importance from the all-feature model (Table~\ref{matrix_xg_train_e}).
+Centroid-50th and Centroid-90th showed the highest importance.
+Centroid features reduced misclassifications among similar activity levels.
+A diverse set of three-dimensional features is effective for activity-level estimation with XGBoost on short-video datasets.}
+\revised{For the XGBoost model, the all-feature input outperformed every single-feature model in Table~\ref{result_xg_train}.
+The contrast between RF and XGBoost indicates that complementary 3D features require an appropriate ensemble model to be fully exploited.}

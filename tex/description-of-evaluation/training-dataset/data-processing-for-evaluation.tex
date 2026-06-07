@@ -14,7 +14,7 @@ The activity levels were treated as a measure that integrates the subjective and
     %
     GL represents the clustering results that capture multiple activity levels.
 % k-meansの手順
-K-means was used as a clustering method \cite{krishna1999genetic}, which enables samples to be split into $k$ groups.
+K-means was used as a clustering method to split samples into $k$ groups \cite{krishna1999genetic}.
   %
   The number of clusters was set to $k=3$.
 % k-meansの結果
@@ -25,10 +25,8 @@ A GL cluster was assigned to each point-cloud dataset as an activity-level indic
 %2nd paragraph
 % データ拡張の実施
 Data extension was performed to increase the available data samples.
-  % データ拡張の恩恵
-  It is necessary to compensate for the shortfall of point-cloud datasets.
-  % データ拡張の理由
-  The datasets integrating both video viewing and test-taking are not available in the public domain.
+\revised{Data extension compensated for the limited number of point-cloud datasets.
+Public datasets combining video viewing and test-taking are unavailable.}
 % データ拡張の方法
 The datasets were extended by generating pairs of point-cloud datasets based on relational similarity~\cite{shinkuma2019relational}.
   % ペアの生成
@@ -41,3 +39,4 @@ The datasets were extended by generating pairs of point-cloud datasets based on 
 Agreement and disagreement between the GL of the two datasets in each of the point-cloud datasets pairs are defined as matching labels (ML).
   % MLの形式
   ML is represented as a binary label.
+\revised{Dataset pairs enabled supervised comparison of feature-vector differences between sessions with known GL relationships.}

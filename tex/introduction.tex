@@ -1,14 +1,16 @@
 %1st paragraph
 %
-There has been an increasing demand for monitoring physical activity in office environments, such as changes in posture while seated, deskwork movements (e.g., hand movements during PC operation, turning the body), movements to use office equipment (e.g., phones, printers, copiers), movement to another desk for conversation with colleagues, and temporary departures from the office floor (e.g., to restrooms, for lunch breaks), walking to communal areas (e.g., meeting rooms, break rooms).
+\deleted{There has been an increasing demand for monitoring physical activity in office environments, such as changes in posture while seated, deskwork movements (e.g., hand movements during PC operation, turning the body), movements to use office equipment (e.g., phones, printers, copiers), movement to another desk for conversation with colleagues, and temporary departures from the office floor (e.g., to restrooms, for lunch breaks), walking to communal areas (e.g., meeting rooms, break rooms).}
+\revised{Demand for monitoring physical activity in office environments has increased.}
+\revised{Typical monitoring targets include posture changes during seated deskwork, hand movements during PC operation, and movements to use office equipment or communal areas.}
 %
 Physical-activity monitoring using smart office technologies has become socially growing awareness, aiming to improve employees' working conditions and enhance overall organizational performance \cite{PAPAGIANNIDIS2020102027}.
 %
-The global market for smart offices is rapidly expanding, having reached \$31.37 billion in 2020 and projected to reach \$90.63 billion by 2030 \cite{smartofficemaketsize}.
+\deleted{The global market for smart offices is rapidly expanding, having reached \$31.37 billion in 2020 and projected to reach \$90.63 billion by 2030 \cite{smartofficemaketsize}.}
 
 %2nd paragraph
 %
-Wearable devices are used to measure physical movements, stress, and emotional states of individuals in office environments \cite{6627764,mozos2017stress,ouwerkerk2013wireless}.
+\deleted{Wearable devices are used to measure physical movements, stress, and emotional states of individuals in office environments \cite{6627764,mozos2017stress,ouwerkerk2013wireless}.
 %
 The wristband-type wearable device DTI-2 has been demonstrated to monitor skin conductance, skin temperature, ambient temperature, ambient light levels, and three-dimensional (3D) acceleration \cite{ouwerkerk2013wireless}.
 %
@@ -22,10 +24,13 @@ Real-time measurement of office occupancy has been demonstrated using RGB camera
 %
 Light-detection-and-ranging (LiDAR) is used to acquire 3D data for recognizing movements of people and objects, particularly indoors \cite{9795869}.
 %
-The use of multiple LiDAR sensors has been demonstrated to sense indoor spaces without blind spots \cite{oka2021spatial,10159661}.
+The use of multiple LiDAR sensors has been demonstrated to sense indoor spaces without blind spots \cite{oka2021spatial,10159661}.}
+\revised{Wearable devices, smart furniture, and RGB cameras have been used to monitor physical movements, stress, and office occupancy \cite{6627764,mozos2017stress,ouwerkerk2013wireless,krejcar2019smart,9216892,vlaovic2022smart,ayers2001monitoring,antonino2019office}.
+Light-detection-and-ranging (LiDAR) acquires 3D data for recognizing indoor movements of people and objects \cite{9795869,oka2021spatial,10159661}.}
+\revised{Multiple LiDAR sensors can cover indoor spaces without blind spots \cite{oka2021spatial,10159661}.}
 
 %3rd paragraph
-Zenonos et al.\ presented a data-collection and prediction system aimed at improving employee productivity in office environments \cite{7457166}.
+\deleted{Zenonos et al.\ presented a data-collection and prediction system aimed at improving employee productivity in office environments \cite{7457166}.
 Their study involved using the wearable device Silmee\texttrademark to gather physiological data, such as heart rate and skin temperature, and the smartphone application ``HealthyOffice'' to collect subjective mood data.
 They used machine-learning models to predict moods.
 They demonstrated their system's effectiveness in a small-scale user study involving the prediction of eight types of moods at five intensity levels.
@@ -34,17 +39,22 @@ Their research included foreground segmentation, occlusion handling, and trackin
 Their system was able to detect and track individuals within an office building using 18 cameras, as demonstrated in their experiments.
 Behera et al.\ presented a real-time surveillance system for monitoring extensive areas, including indoor environments, using multiple cameras \cite{6409058}.
 Their research involved detecting moving objects using background subtraction, object tracking, inter-camera cooperation, and occlusion detection and handling.
-Their system was able to detect and track individuals by placing four IP cameras with overlapping fields of view, establishing inter-camera cooperation, as proven from their experiments.
-
-%4th paragraph
+Their system was able to detect and track individuals by placing four IP cameras with overlapping fields of view, establishing inter-camera cooperation, as proven from their experiments.}
+\revised{Zenonos et al.\ presented a mood-prediction system using wearable physiological data \cite{7457166}.
+Yang et al.\ presented a multi-camera indoor tracking system \cite{4284740}.
+Behera et al.\ presented a multi-camera surveillance system for indoor environments \cite{6409058}.}
+\revised{Zenonos et al.\ relied on wearable physiological sensors \cite{7457166}.
+Yang et al.\ and Behera et al.\ relied on RGB cameras for person detection and tracking \cite{4284740,6409058}.
+These sensing modalities share the burden or privacy concerns described above.}
 The aforementioned studies have the following challenges:
 studies using wearable devices have not considered the discomfort and burden associated with wearing such devices, and contain potential privacy risk.
-In response to the above challenges, our study investigates a system that estimates activity levels during deskwork.
-The system infers activity levels solely from 3D-sensor data, without the need for wearable or other attached devices.
+\deleted{In response to the above challenges, our study investigates a system that estimates activity levels during deskwork.
+The system infers activity levels solely from 3D-sensor data, without the need for wearable or other attached devices.}
 
-%5th paragraph
+%4th paragraph
 % 提案システム
-We propose a system that estimates activity levels of people working in office environments using a LiDAR sensor network.
+\revised{This paper proposes a system that estimates deskwork activity levels solely from 3D-sensor data, without wearable or attached devices.}
+\deleted{This paper proposes a system that estimates activity levels of people working in office environments using a LiDAR sensor network.
   % 提案システムの目的
   The system infers activity levels from spatial features extracted from 3D point-cloud data.
   % 「活動レベル」の定義
@@ -75,16 +85,34 @@ We collected point-cloud data of people during educational video viewing using a
 %
 We obtained several indicators representing the activity levels of people during work using objective evaluation and subjective evaluation of the educational video content.
 We created labels for activity indicators using clustering and generated binary labels on the basis of the consistency of labels among subjects.
-We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.
+We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.}
+\revised{A LiDAR sensor network estimates activity levels of office workers from spatial features extracted from 3D point-cloud data.
+Activity level is defined as the degree of concentration during PC-based deskwork.
+\revised{The activity level indicates whether a person is focused on the task or has lost concentration.}
+Concentration is assumed to accompany active movements that appear as dynamic patterns in LiDAR data.
+Point-cloud data were collected during educational video viewing using multiple LiDAR sensors.
+Activity indicators were obtained from objective and subjective evaluations of the video content.
+Clustering was applied to the indicators to generate binary labels.
+\revised{Numerical features represent 3D characteristics of point-cloud data, such as the spatial center of mass.
+Binary matching labels (ML) were generated on the basis of group-label (GL) agreement between dataset pairs.}
+Multiple models using different feature-extraction methods were constructed and evaluated against the binary labels.}
 
 %6th paragraph
-We previously presented an edge computing system that estimates activity levels of people working in office environments using a LiDAR sensor network \cite{kizawa2023estimation}.
+\deleted{We previously presented an edge computing system that estimates activity levels of people working in office environments using a LiDAR sensor network \cite{kizawa2023estimation}.
 Differently from the previous study, our study addresses estimation models using multiple features.
-The previous study characterized the collected point-cloud data using a single method and a statistical model as the estimation model and using linear correlation as the evaluation metric.
+The previous study characterized the collected point-cloud data using a single method and a statistical model as the estimation model and using linear correlation as the evaluation metric.}
+\revised{A previous edge computing system used a single feature-extraction method and a statistical model with linear correlation as the evaluation metric \cite{kizawa2023estimation}.
+The present study addresses estimation models using multiple features.}
+\revised{The previous study extracted a single statistical feature from point-cloud frame similarity and evaluated estimation using linear correlation \cite{kizawa2023estimation}.}
 
 %7th paragraph
-Section~\ref{sec:related-works} provides an overview of related works.
+\deleted{Section~\ref{sec:related-works} provides an overview of related works.
 Section~\ref{sec:proposed-system} describes the system model of the proposed system, the feature-extraction method for point-cloud data, and labeling method for activity levels.
 Section~\ref{sec:evaluation} explains the experimental setup for obtaining the evaluation dataset, setup, and construction of the machine-learning model.
 Section~\ref{sec:evaluation-result} presents the evaluation results of the proposed system, and
-Section~\ref{sec:conclusion} concludes this paper.
+Section~\ref{sec:conclusion} concludes this paper.}
+\revised{Section~\ref{sec:related-works} reviews related works.
+Section~\ref{sec:proposed-system} describes the system model, feature extraction, and labeling.
+Section~\ref{sec:evaluation} explains the experimental setup and machine-learning models.
+Section~\ref{sec:evaluation-result} presents the evaluation results.
+Section~\ref{sec:conclusion} concludes the paper.}

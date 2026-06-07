@@ -10,14 +10,14 @@
   \label{exp_site}
 \end{figure}
 
-\begin{figure}[t]
+\deleted{\begin{figure}[t]
   \centerline{\includegraphics[width=\linewidth]{img/dyployment.png}}
   \caption{Arrangement of experimental equipment}
   \label{fig.exp_arr}
-\end{figure}
+\end{figure}}
 
 Fig.~\ref{exp_system} shows our experimental system based on Fig.~\ref{systemmodel}.
-The experimental system consisted of multiple 3D-sensor devices, an edge computer, a user device, and a storage.
+\deleted{The experimental system consisted of multiple 3D-sensor devices, an edge computer, a user device, and a storage.
 Each 3D-sensor device consisted of a LiDAR unit and an edge device.
 The edge device consisted of a filter and a transmitter.
 The edge computer consisted of a receiver and a merger.
@@ -28,16 +28,25 @@ The receiver receives the point-cloud data from each edge device.
 The merger integrates the data received by the receiver on the basis of timestamps.
 The integrated point-cloud data are stored in the storage.
 The interface is operated by contributors to control and monitor the system.
-The capturer acquires indicators of an individual's activity level.
-We used a Livox Mid-70 \cite{Mid70} as the LiDAR unit, NVIDIA Jetson Nano \cite{Jetsonnano} as the edge device, and NVIDIA Jetson Xavier NX as the edge computer \cite{JetsonNX}.
+The capturer acquires indicators of an individual's activity level.}
+\revised{The experimental system consisted of multiple 3D-sensor devices, an edge computer, a user device, and storage.
+Point-cloud data from the sensors are filtered, transmitted, integrated on the basis of timestamps, and stored.
+The user device captures activity-level indicators.}
+\deleted{We used a Livox Mid-70 \cite{Mid70} as the LiDAR unit, NVIDIA Jetson Nano \cite{Jetsonnano} as the edge device, and NVIDIA Jetson Xavier NX as the edge computer \cite{JetsonNX}.
 Each contributor's laptop computer was used as the user device.
 
 We address verifying the effectiveness of an activity-level evaluation method within office environments.
 Akiyama et al.\ reported an approach that employs multiple LiDAR sensors to eliminate blind spots in indoor spaces, thereby illustrating the potential for sensing in more complex environments by using devices with higher point densities and broader measurement ranges than those used in our experiment \cite{9789786}.
 Shinkuma et al.\ presented findings on how spatial factors influence office activities \cite{10636133}.
-Rather than seeking to optimize sensor placement, calibration techniques, or conduct a comprehensive evaluation that includes spatial factors, our study aims to evaluate the activity levels of deskwork by relying solely on dynamic features extracted from 3D point-cloud data.
+Rather than seeking to optimize sensor placement, calibration techniques, or conduct a comprehensive evaluation that includes spatial factors, our study aims to evaluate the activity levels of deskwork by relying solely on dynamic features extracted from 3D point-cloud data.}
+\revised{A Livox Mid-70 \cite{Mid70}, NVIDIA Jetson Nano \cite{Jetsonnano}, and NVIDIA Jetson Xavier NX \cite{JetsonNX} were used as the LiDAR unit, edge device, and edge computer, respectively.
+Each contributor's laptop served as the user device.
+The evaluation verifies activity-level estimation from dynamic features extracted from 3D point-cloud data, without optimizing sensor placement or calibration \cite{9789786,10636133}.}
+\revised{Akiyama et al.\ demonstrated that multiple LiDAR sensors can eliminate blind spots in indoor spaces \cite{9789786}.
+The present evaluation focuses on dynamic feature effectiveness rather than spatial calibration or sensor-placement optimization.}
 Fig.~\ref{exp_site} shows the experimental site.
 The experiment was conducted in lab room, located at the Toyosu Campus of Shibaura Institute of Technology in Koto-ku, Tokyo, Japan.
-Fig.~\ref{fig.exp_arr} shows the placement diagram for each LiDAR unit.
+\deleted{Fig.~\ref{fig.exp_arr} shows the placement diagram for each LiDAR unit.
 Each unit was placed 1.0 m to the left and right of the center of the user-device keyboard and mounted at a height of 0.15 m using a tripod.
-Each unit was tilted 10° horizontally with respect to the desk and configured to operate at a sensing rate of 110 frames per second.
+Each unit was tilted 10° horizontally with respect to the desk and configured to operate at a sensing rate of 110 frames per second.}
+\revised{Each LiDAR unit was placed 1.0 m to the left and right of the center of the user-device keyboard, mounted at a height of 0.15 m using a tripod, tilted 10° horizontally with respect to the desk, and configured to operate at a sensing rate of 110 frames per second.}

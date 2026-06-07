@@ -4,7 +4,7 @@
   \label{trans3dto2d}
 \end{figure}
 
-We carry out image-based feature modeling as the first method.
+\deleted{We carry out image-based feature modeling as the first method.
 This method generates image arrays from frames of time-series point-cloud data and converts them into statistics of similarity changes between the image arrays.
 The hypothesis of this method is that changes in a person's overall physical movement affect activity levels.
 Such changes can be measured as changes in the similarity of point-cloud frames \cite{kizawa2023estimation}.
@@ -15,27 +15,30 @@ We project each point in the point-cloud data onto a plane formed by two of the 
 We carry out the projection on all three axes for all frames.
 We then convert a 3D point-cloud frame into a 2D image and generate a time-series 2D pixel array.
 We refer to the time-series 2D pixel array as a `video frame' going forward.
-We calculate a similarity between frames of the video frame and use zero-mean normalized cross-correlation (ZNCC) as a measure of image similarity, which is commonly used for measuring image similarity, particularly in template matching \cite{chen2020self,NAKHMANI2013315}.
-ZNCC is defined as:
+We calculate a similarity between frames of the video frame and use zero-mean normalized cross-correlation (ZNCC) as a measure of image similarity, which is commonly used for measuring image similarity, particularly in template matching \cite{chen2020self,NAKHMANI2013315}.}
+\revised{Image-based feature modeling generates image arrays from time-series point-cloud frames and converts similarity changes between the arrays into statistics \cite{kizawa2023estimation}.
+Overall physical movement is assumed to affect activity levels through changes in frame similarity.
+For each frame, 3D point-cloud data are projected onto planes formed by pairs of the three coordinates ($x$, $y$, and $z$), as shown in Fig.~\ref{trans3dto2d}.
+The projection is applied on all three axes for all frames.
+Each 3D frame is converted into a 2D image to form a time-series 2D pixel array referred to as a `video frame'.
+Frame-to-frame similarity is measured using zero-mean normalized cross-correlation (ZNCC) \cite{chen2020self,NAKHMANI2013315}.}
+\deleted{ZNCC is defined as:
 \begin{equation}
   \label{eq:zncc}
   \mathrm{ZNCC} = \frac{\sum_{i=1}^{MN} (x_{i}-\bar{x})(y_{i}-\bar{y})}{\sqrt{\sum_{i=1}^{MN} (x_{i}-\bar{x})^2 \sum_{i=1}^{MN} (y_{i}-\bar{y})^2}},
 \end{equation}
-where $x$ and $y$ are the intensity values of the 1st and 2nd dimensions, and $M$ and $N$ are the number of pixels of 1st and 2nd dimensions, respectively.
-We derive the ZNCC between each of the video frames.
-We then obtain the ZNCC between the $i$-th and $i+1$-th frames for the 1st to $I-1$-th frames, where $I$ is the number of frames.
-We obtain a distribution of ZNCC from the video frame.
-We extract the 90th and 50th percentile values from the distribution of the obtained ZNCC scores as numerical features.
-The 50th percentile value is selected to reflect the central tendency of the feature distribution in a manner that is minimally influenced by outliers.
-The 90th percentile value is selected to capture upper-range variations that are not fully represented by the central tendency alone.
+where $x$ and $y$ are the intensity values of the 1st and 2nd dimensions, and $M$ and $N$ are the number of pixels of 1st and 2nd dimensions, respectively.}
+\revised{ZNCC is computed between consecutive frames for the 1st to $I-1$-th frames, where $I$ is the number of frames.
+The 50th and 90th percentile values of the ZNCC distribution are extracted as numerical features.
+\revised{The 50th percentile value reflects the central tendency of the ZNCC distribution with minimal outlier influence.
+The 90th percentile value captures upper-range similarity changes not represented by the central tendency alone.}
 
-We carry out centroid feature modeling as a second method.
-This method converts a head region of time-series point-cloud data into statistics of center-of-gravity changes.
-The hypothesis of this method is that changes in the center of gravity of the head affect activity levels.
-The method follows a specific process for feature modeling.
-We extract a set of 3D coordinates from an initial frame that represents a human head, define the 3D coordinates as a head region, extract the head region from all frames, and calculate the sum of each coordinate in the head region for each frame.
+Centroid feature modeling converts a head region of time-series point-cloud data into statistics of center-of-gravity changes.
+Head movement is assumed to affect activity levels through center-of-gravity changes.
+A head region is defined from 3D coordinates in an initial frame and extracted from all frames.
+The sum of each coordinate in the head region is calculated for each frame.}
 Each frame is represented as a set of $n$ points ($x_{i}$, $y_{i}$, $z_{i}$) in 3D coordinate space.
-We define the sum of the $x$, $y$, and $z$ for each point as
+\deleted{The sum of the $x$, $y$, and $z$ coordinates is defined as
 \begin{equation}
   \left\{
   \begin{aligned}
@@ -45,16 +48,19 @@ We define the sum of the $x$, $y$, and $z$ for each point as
   \end{aligned}
   \right.
 \end{equation}
-We calculate the center of gravity for all up to frame $I$.
-The center of gravity $G_{j}$ can be expressed as the sum of each coordinate divided by the total number of points $n$:
+The center of gravity $G_{j}$ for each frame up to $I$ is expressed as the sum of each coordinate divided by the total number of points $n$:
 \begin{equation}
   G_{j} = \left(\frac{X}{n}, \frac{Y}{n}, \frac{Z}{n}\right),
 \end{equation}
 where $j$ represents the frame number, ranging from the 1st frame to the $I$-th frame.
-We calculate the difference between the central point of the center of gravity of all frames and the center of gravity of each frame.
-We define the central point $C$ of the center of gravity of all frames as
+The difference between the central point $C$ of the center of gravity of all frames and the center of gravity of each frame is calculated.
+The central point $C$ is defined as
 \begin{equation}
   C = \frac{1}{I}\sum_{j=1}^{I} G_{j}.
 \end{equation}
-We represent the difference as Euclidean distance \cite{blais1995registering}.
-We obtain a distribution of the differences from the head region of time-series point-cloud data and extract the 90th and 50th percentile values from the distribution of the differences in center-of-gravity changes.
+The difference is represented as Euclidean distance \cite{blais1995registering}.}
+\revised{The coordinate sums are defined as $X=\sum_{i=1}^{n}x_{i}$, $Y=\sum_{i=1}^{n}y_{i}$, and $Z=\sum_{i=1}^{n}z_{i}$.
+The center of gravity $G_{j}$ for each frame up to $I$ is $G_{j}=(X/n, Y/n, Z/n)$, where $j$ is the frame number from the 1st to the $I$-th frame.
+The central point $C$ of the center of gravity of all frames is $C=\frac{1}{I}\sum_{j=1}^{I}G_{j}$.
+The difference between $C$ and $G_{j}$ is represented as Euclidean distance \cite{blais1995registering}.
+The 50th and 90th percentile values of the center-of-gravity difference distribution are extracted as numerical features.}

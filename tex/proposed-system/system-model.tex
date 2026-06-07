@@ -7,7 +7,7 @@
 Fig.~\ref{systemmodel} shows a system model of the proposed system.
 The phase of the proposed system switches between training and estimation.
 
-For the training phase, the proposed system consists of multiple 3D-sensor devices, an edge computer, a user device, an edge server, and a model database (DB).
+\deleted{For the training phase, the proposed system consists of multiple 3D-sensor devices, an edge computer, a user device, an edge server, and a model database (DB).
 Each 3D-sensor device consists of a LiDAR unit and an edge device.
 The edge device consists of a converter, a filter, and a transmitter.
 The edge computer consists of a receiver and a merger, as presented by Akiyama et al.\ \cite{9789786}.
@@ -34,4 +34,19 @@ The edge device converts the acquired stream data into point-cloud data, execute
 The edge computer integrates the data received from each 3D-sensor device.
 The feature extractor generates multiple features from the point-cloud data integrated by the edge computer.
 The generated features are sent to the estimator.
-The estimator executes evaluations using the machine-learning model from the model DB.
+The estimator executes evaluations using the machine-learning model from the model DB.}
+\revised{Each 3D-sensor device consists of a LiDAR unit and an edge device with a converter, filter, and transmitter.
+The edge computer consists of a receiver and a merger \cite{9789786}.
+The user device consists of an interface and a capturer for activity-level indicators.
+In the training phase, the edge server additionally includes a feature extractor, feature storage, a label creator, and a model constructor.
+LiDAR units acquire 3D stream data.
+Edge devices convert the stream data into point-cloud data, apply filtering, and transmit the data to the edge computer.
+The merger integrates point-cloud data from multiple sensors.
+The feature extractor generates numerical features from the integrated data.
+The label creator converts activity-level indicators into categorical labels.
+The model constructor builds a machine-learning model from the features and labels and stores it in the model database (DB).
+In the estimation phase, the edge server includes a feature extractor and an estimator.
+The estimator applies the stored model to the generated features.}
+\revised{The user device and label creator are used only in the training phase to acquire activity-level indicators and categorical labels.
+The estimation phase omits the user device.
+Point-cloud data flow is identical in both phases up to feature extraction.}

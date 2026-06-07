@@ -1,4 +1,4 @@
-We use point-cloud data obtained from 3D-sensors.
+\deleted{We use point-cloud data obtained from 3D-sensors.
 The format of point-cloud data consists of sets of 3D coordinates of points.
 Each point does not have individual characteristics.
 The number of frames contained in each dataset and the duration of each frame vary.
@@ -10,4 +10,12 @@ Note that methods for identifying and extracting specific regions from 3D space 
 We capture activity levels as multiple numerical indicators and group contributors on the basis of these indicators.
 We set labels to identify the groups and assign a label to each contributor according to their group.
 The specific method for labeling is detailed in Section~\ref{sec:labeling}.
-We evaluate the features used to estimate activity levels on the basis of the assigned labels.
+We evaluate the features used to estimate activity levels on the basis of the assigned labels.}
+\revised{Point-cloud data obtained from 3D-sensors consist of sets of 3D coordinates without individual point characteristics.
+The number of frames and frame duration vary across datasets.
+Target-object regions are extracted and converted into statistical features as described in Section~\ref{sec:feature-creation}.
+Methods for identifying regions in 3D space are beyond the scope of the paper.
+Activity levels are captured as multiple numerical indicators.
+Contributors are grouped on the basis of the indicators and assigned labels as described in Section~\ref{sec:labeling}.
+The features are evaluated on the basis of the assigned labels.}
+\revised{Statistical features are derived from datasets with varying frame counts and frame durations after target-object region extraction.}
