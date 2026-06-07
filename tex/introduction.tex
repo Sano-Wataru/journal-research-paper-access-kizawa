@@ -54,7 +54,8 @@ The system infers activity levels solely from 3D-sensor data, without the need f
 %4th paragraph
 % 提案システム
 \revised{This paper proposes a system that estimates deskwork activity levels solely from 3D-sensor data, without wearable or attached devices.}
-\deleted{This paper proposes a system that estimates activity levels of people working in office environments using a LiDAR sensor network.
+\begin{deletedblock}
+This paper proposes a system that estimates activity levels of people working in office environments using a LiDAR sensor network.
   % 提案システムの目的
   The system infers activity levels from spatial features extracted from 3D point-cloud data.
   % 「活動レベル」の定義
@@ -85,17 +86,28 @@ We collected point-cloud data of people during educational video viewing using a
 %
 We obtained several indicators representing the activity levels of people during work using objective evaluation and subjective evaluation of the educational video content.
 We created labels for activity indicators using clustering and generated binary labels on the basis of the consistency of labels among subjects.
-We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.}
-\revised{A LiDAR sensor network estimates activity levels of office workers from spatial features extracted from 3D point-cloud data.
+We constructed multiple models using different data types and a combination of various feature-extraction methods and evaluated accuracy using the binary labels.
+\end{deletedblock}
+\begin{revisedblock}
+%
 Activity level is defined as the degree of concentration during PC-based deskwork.
-\revised{The activity level indicates whether a person is focused on the task or has lost concentration.}
+  %
+  The activity level indicates whether a person is focused on the task or has lost concentration.
+%
 Concentration is assumed to accompany active movements that appear as dynamic patterns in LiDAR data.
+%
 Point-cloud data were collected during educational video viewing using multiple LiDAR sensors.
+%
 Activity indicators were obtained from objective and subjective evaluations of the video content.
+%
 Clustering was applied to the indicators to generate binary labels.
-\revised{Numerical features represent 3D characteristics of point-cloud data, such as the spatial center of mass.
-Binary matching labels (ML) were generated on the basis of group-label (GL) agreement between dataset pairs.}
-Multiple models using different feature-extraction methods were constructed and evaluated against the binary labels.}
+%
+Numerical features represent 3D characteristics of point-cloud data, such as the spatial center of mass.
+%
+Binary matching labels (ML) were generated on the basis of group-label (GL) agreement between dataset pairs.
+%
+Multiple models using different feature-extraction methods were constructed and evaluated against the binary labels.
+\end{revisedblock}
 
 %6th paragraph
 \deleted{We previously presented an edge computing system that estimates activity levels of people working in office environments using a LiDAR sensor network \cite{kizawa2023estimation}.
