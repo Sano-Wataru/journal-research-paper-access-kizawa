@@ -3,4 +3,43 @@
 We analyze clustering stability as a potential contributor to the limited improvement observed when utilizing multiple features.}
 \revised{Factors that may limit estimation accuracy are discussed.
 Clustering stability is analyzed as a potential contributor to the limited improvement from multiple features.}
-\revised{Limitations of the evaluation scenario and applicability to office deskwork are discussed.}
+% \revised{Limitations of the evaluation scenario and applicability to office deskwork are discussed.}
+
+% \begin{figure}[t]
+% 	\centerline{\includegraphics[width=\linewidth]{img/clustering.png}}
+% 	\caption{Stability verification of cluster assignment for short video dataset}
+% 	\label{fig:clustering-stability}
+% \end{figure}
+
+%
+\deleted{We demonstrated in Section \ref{subsec:evaluation-short} that three-dimensional point-cloud features are effective for activity-level estimation in the short-video dataset.
+	%
+	The XGBoost model achieved the highest accuracy when all features were used as inputs.
+% 
+However, it was also hypothesized that clustering instability might partially explain why the improvement in estimation accuracy remained limited.
+% 
+To investigate this, the following procedure was conducted. 
+% 
+First, we applied k-means clustering ($k$=3) to the entire short-video dataset to establish a baseline clustering result.
+% 
+Next, we randomly removed one sample from the dataset and re-ran the clustering, repeating this removal-and-reclustering operation 10 times.
+% 
+This entire series of operations was repeated another ten times, and statistical values (mean and standard deviation) were calculated for the differences between the baseline clustering and the clustering results obtained after each random removal.
+% 
+% Fig.~\ref{fig:clustering-stability} illustrates the number of changed cluster assignments.
+% 
+The horizontal axis represents the number of trials, while the vertical axis shows the mean and standard deviation of cluster changes. 
+% 
+Cluster changes were observed to range from approximately 20 to 40 in each trial, indicating a certain degree of variability in the clustering results.
+% 
+In summary, our analysis confirms that clustering instability is indeed a contributing factor to the limited improvement in estimation accuracy when utilizing multiple features.}
+\revised{Section~\ref{subsec:evaluation-short} demonstrated that three-dimensional point-cloud features are effective for activity-level estimation.
+Clustering instability may partially explain the limited accuracy improvement from multiple features.
+K-means clustering ($k$=3) was applied to the short-video dataset as a baseline.
+One sample was randomly removed and clustering was re-run 10 times per trial, repeated over 10 trials.
+Cluster changes ranged from approximately 20 to 40 per trial.
+Clustering instability is a contributing factor to the limited accuracy improvement from multiple features.}
+\revised{The XGBoost all-feature model achieved the highest accuracy in Section~\ref{subsec:evaluation-short}.
+The accuracy gain over single-feature models remained limited.
+A baseline clustering result was established with k-means ($k$=3) on the full dataset.
+Mean and standard deviation of reassignment counts were computed across 10 trials of 10 removal-and-reclustering operations.}
