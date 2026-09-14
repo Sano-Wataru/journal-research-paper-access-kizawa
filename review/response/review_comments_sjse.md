@@ -304,7 +304,7 @@ Furthermore, regarding that the point cloud data is projected onto images in thr
 三次元点群をそのまま用いてactivity levelを推定することが難しいことの根拠を示せていない。査読者は二次元投影の手法を使う妥当性が十分でないと判断した。
 
 [修正案]
-三次元点群をそのまま用いてactivity levelを推定することの難しさを、文献を引用して定性的に記述する。
+三次元点群をそのまま用いて activity level を推定することの難しさを、文献を引用して定性的に記述する。
 生点群には点対応がないためフレーム間の動きが一意に測れない、と述べたうえで直交投影する。
 
 引用文献:
