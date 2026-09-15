@@ -9,13 +9,13 @@ Clustering stability is analyzed as a potential contributor to the limited impro
 
 %
 \revised{A random-inference baseline of 0.5 was used for binary classification.
-Eight of the ten RF and XGBoost models exceeded the baseline on the short-video dataset.
+Eight of the ten RF and XGBoost models exceeded the baseline on the short video dataset.
 The result demonstrates that activity levels were estimated from point-cloud features.}
 
 %
-Section~\ref{subsec:evaluation-short} demonstrated that three-dimensional point-cloud features are effective for activity-level estimation.
+Section~\ref{subsec:evaluation-short} demonstrated that three-dimensional point-cloud features are effective for activity level estimation.
 Clustering instability may partially explain the limited accuracy improvement from multiple features.
-K-means clustering ($k$=3) was applied to the short-video dataset as a baseline.
+K-means clustering ($k$=3) was applied to the short video dataset as a baseline.
 One sample was randomly removed and clustering was re-run 10 times per trial, repeated over 10 trials.
 Cluster changes ranged from approximately 20 to 40 per trial.
 Clustering instability is a contributing factor to the limited accuracy improvement from multiple features.

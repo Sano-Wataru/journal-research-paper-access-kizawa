@@ -11,7 +11,7 @@ Each 3D-sensor device consists of a LiDAR unit and an edge device with a convert
 \deleted{The edge computer consists of a receiver and a merger \cite{9789786}.}
 \revised{We adopt the multi-sensor filtering and merging scheme of Akiyama et al. \cite{9789786} for point-cloud acquisition.
 The edge computer consists of a receiver and a merger.}
-The user device consists of an interface and a capturer for activity-level indicators.
+The user device consists of an interface and a capturer for activity level indicators.
 \deleted{In the training phase, the edge server additionally consists ofa feature extractor, feature storage, a label creator, and a model constructor.}
 \revised{In the training phase, the cloud server additionally consists of a feature extractor, feature storage, a label creator, and a model constructor.}
 \deleted{LiDAR units acquire 3D stream data.}
@@ -21,11 +21,11 @@ The user device consists of an interface and a capturer for activity-level indic
 \revised{Filtering reduces the volume of point-cloud data transmitted to the edge computer \cite{9789786}.}
 The merger integrates point-cloud data from multiple sensors.
 The feature extractor generates numerical features from the integrated data.
-The label creator converts activity-level indicators into categorical labels.
+The label creator converts activity level indicators into categorical labels.
 The model constructor builds a machine-learning model from the features and labels and stores it in the model database (DB).
 \deleted{In the estimation phase, the edge server includes a feature extractor and an estimator.}
 \revised{In the estimation phase, the cloud server includes a feature extractor and an estimator.}
 The estimator applies the stored model to the generated features.
-The user device and label creator are used only in the training phase to acquire activity-level indicators and categorical labels.
+The user device and label creator are used only in the training phase to acquire activity level indicators and categorical labels.
 The estimation phase omits the user device.
 Point-cloud data flow is identical in both phases up to feature extraction.

@@ -6,7 +6,7 @@
 
 Image-based feature modeling generates image arrays from time-series point-cloud frames and converts similarity changes between the arrays into statistics \cite{kizawa2023estimation}.
 Overall physical movement is assumed to affect activity levels through changes in frame similarity.
-\revised{Comparison of two point clouds requires point correspondence \cite{pomerleau2015review}.
+\revised{Comparison of two point-clouds requires point correspondence \cite{pomerleau2015review}.
 Raw point-cloud frames do not provide the correspondence.
 Frame-to-frame movement is not uniquely defined without the correspondence.
 Orthogonal projection maps 3D occupancy onto a fixed 2D grid.}
@@ -19,8 +19,8 @@ The 50th and 90th percentile values of the ZNCC distribution are extracted as nu
 The 50th percentile value reflects the central tendency of the ZNCC distribution with minimal outlier influence.
 The 90th percentile value captures upper-range similarity changes not represented by the central tendency alone.
 
-Centroid feature modeling converts a head region of time-series point-cloud data into statistics of center-of-gravity changes.
-Head movement is assumed to affect activity levels through center-of-gravity changes.
+Centroid feature modeling converts a head region of time-series point-cloud data into statistics of center of gravity changes.
+Head movement is assumed to affect activity levels through center of gravity changes.
 A head region is defined from 3D coordinates in an initial frame and extracted from all frames.
 The sum of each coordinate in the head region is calculated for each frame.
 Each frame is represented as a set of $n$ points ($x_{i}$, $y_{i}$, $z_{i}$) in 3D coordinate space.
@@ -28,4 +28,4 @@ The coordinate sums are defined as $X=\sum_{i=1}^{n}x_{i}$, $Y=\sum_{i=1}^{n}y_{
 The center of gravity $G_{j}$ for each frame up to $I$ is $G_{j}=(X/n, Y/n, Z/n)$, where $j$ is the frame number from the 1st to the $I$-th frame.
 The central point $C$ of the center of gravity of all frames is $C=\frac{1}{I}\sum_{j=1}^{I}G_{j}$.
 The difference between $C$ and $G_{j}$ is represented as Euclidean distance \cite{blais1995registering}.
-The 50th and 90th percentile values of the center-of-gravity difference distribution are extracted as numerical features.
+The 50th and 90th percentile values of the center of gravity difference distribution are extracted as numerical features.
