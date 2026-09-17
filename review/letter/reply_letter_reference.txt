@@ -1,0 +1,175 @@
+Reply letter  
+Paper:Sensors-90239-2025, Multi-LiDAR tracking system for micro-mobility vehicles  with deep-learning detection model 
+Authors: Yuta, Fukiya; Ryoichi, Shinkuma; Gabriele, Trovato  
+Assosiate Editor: Prof. Chuan Hu  
+Dear Assosiate Editor and Reviewers,  
+Thank you for reviewing our paper. 
+We are uploading a our point-by-point responses to the reviewers’ comments, a re vised manuscript with deletions shown in red and revisions/additions shown in blu e, and a clean updated manuscript without highlights.  
+The manuscript has not been published and is not under consideration for publicat ion elsewhere. We have no conflicts of interest to disclose. If you feel that the  manuscript is appropriate for IEEE Sensors Journal, we should like to request you  again our article to the same reviewers as the previous review.  
+Best regards,  
+Yuta Fukiya, Ryoichi Shinkuma, and Gabriele Trovato.  
+Dear Mr. Fukiya, 
+I am writing to you concerning the above-referenced manuscript, which you sub mitted to the IEEE Sensors Journal.  
+Based on the enclosed set of reviews, found at the bottom of this letter, thi s manuscript has not been recommended for publication.  
+C. 0-1  
+The paper lacks a clear articulation of novelty compared to existing multi-Li DAR and deep-learning-based tracking systems. While the application to micro mobility vehicles (MMVs) is relevant, the proposed architecture appears to be  a straightforward integration of standard components. 
+R. 0-1  
+To clarify the novelty compared to existing multi-LiDAR and deep-learning-ba sed tracking systems, we have modified all of the fifth paragraph and lines  19-40 of the sixth paragraph in Section I. While the architecture may appear 
+to be a straightforward integration of standard components, these revisions  clarify that the system is specifically designed to handle the unique agilit y of MMVs and the resultant vulnerability to network-induced data loss—chall enges that have not been quantitatively evaluated in prior research.  
+  
+(Fifth paragraph, Section I)  
+The prior works mentioned in the previous paragraph have advanced the trackin g accuracy and robustness of LiDAR systems for tracking multiple dynamic obje cts. However, the prior works have addressed targets with highly linear motio n, such as passenger vehicles and trucks, or low-speed subjects like pedestri ans. MMVs present a unique tracking challenge: they move faster than pedestri ans yet possess the agility to execute sudden, sharp turns, unlike standard a utomobiles. In a network-integrated multi-LiDAR system, point-cloud data loss  
+during network transmission can cause detection failures, and the MMV-specifi c motion characteristics described above make tracking particularly vulnerabl e to such failures. Nevertheless, the aforementioned works have not quantitat ively evaluated tracking performance for MMVs under intermittent point-cloud  loss.  
+(Lines 19-40, sixth paragraph, Section I)  
+This study addresses the feasibility of real-time multi-LiDAR MODT specifical ly for MMVs, which have a unique agility different from other moving objects  as mentioned above. The evaluation is conducted from three perspectives: robu stness, scalability, and real-time capability. First, the robustness evaluati on assesses the performance of the proposed system under practical deployment  
+challenges using experimental data collected in real-world environments, incl uding detection failures caused by communication issues in network-integrated  systems and variations in MMV speed. Second, the scalability evaluation asses ses the performance of the proposed system as the MMV density increases withi n a fixed spatial area. Third, the real-time capability evaluation measures t he processing speed required for the MODT pipeline and verifies whether the p roposed edge-computing system satisfies real-time processing requirements.  
+While the decision of the Associate Editor may not be positive, based on the  comments of the reviewers, you may wish to consider and implement changes sug gested in these comments. The current decision does not bias any future submi ssion of a rework as a new manuscript; however, if received by this journal,  this new manuscript will be moved to peer review only if it shows noticeable  changes and improvements compared to the currently rejected manuscript. 
+Thank you for considering IEEE Sensors Journal for  
+publication of your work.  
+If you have any questions regarding the reviews or this decision, please cont act me directly. Any other support questions should be directed to sensors admin@ieee.org.  
+Sincerely,  
+Prof. Chuan Hu  
+Associate Editor, IEEE Sensors Journal  
+chuan.hu@sjtu.edu.cn  
+https://mc.manuscriptcentral.com/sensors 
+Reviewer: 1  
+Recommendation: Review Again After Resubmission (Paper is not acceptable in i ts current form, but has merit. A major rewrite is required. Author should be  encouraged to resubmit a rewritten version after the changes suggested in the  Comments section have been completed.)  
+Comments:  
+The study proposes a system that employs multiple LiDAR sensors mounted on in frastructure to detect and track micro-mobility vehicles, leveraging edge ser vers to aggregate data from these sensors for deep learning-based detection a nd tracking. The research focuses on the detection of micro-mobility vehicle 
+s, demonstrating potential to advance intelligent detection capabilities in m odern urban environments.  
+Comments and suggestions on the authors are as follows:  
+C. 1-1  
+1. The paper does not clearly articulate its contributions, making it difficu lt to discern the novelty and significance of the work. 
+R. 1-1  
+We have modified the descriptions so as to clarify the novelty and significa nce of our work. Please see the details in R. 0-1.  
+C. 1-2  
+2. The study focuses on using multiple LiDAR sensors for detecting and tracki ng micro-mobility vehicles. However, the related work section includes discus sions on LiDAR and camera fusion techniques, which appear to have limited rel evance to the core research topic of the paper.  
+R. 1-2  
+We have modified Section II-B so as to reduce the volume of descriptions of  camera and LiDAR-camera fusion techniques. We have deleted detailed discussi ons of fusion technologies that are less relevant to the core research topic  and reduced the text length to maintain focus on the multi-LiDAR system.    
+(Section II-B)  
+ Although our system addresses LiDAR-only tracking, object tracking has been  extensively studied using camera-based approaches and sensor fusion technique s.  
+ Regarding camera-based infrastructure monitoring, Fleck et al.[a] utilized  RGB cameras with Kalman filter to generate high-precision reference trajector ies for autonomous vehicles, achieving lane-level accuracy. Similarly, Zou et  al. [b] developed a full-stack framework utilizing roadside cameras for objec t detection and 3D position estimation, enabling precise cross-camera informa tion fusion and traffic monitoring.  
+ To further enhance detection accuracy, several studies have explored fusing  LiDAR and camera data. Zimmer et al. [c] introduced InfraDet3D, a multimodal  system employing early and late fusion strategies to improve trajectory recon struction performance beyond single-sensor systems. Wang et al. [d] presented  a method integrating roadside LiDAR and cameras, leveraging attention mechani sms and adaptive weighting to extract high-resolution trajectories. Additiona lly, Nie et al. [e] presented DTFI for highway scenarios, which combines voxe l-based 3D detection with an interactive multi-model unscented Kalman filter  (IMM-UKF) to ensure real-time performance. While the aforementioned works reg arding fusion methods offer high accuracy, they require complex calibration a nd heterogeneous data handling, contrasting with our study, which addresses m ulti-LiDAR networks for micro-mobility tracking. 
+[a] T. Fleck, S. Ochs, M. R. Zofka, and J. M. Zollner, “Robust tracking of r eference trajectories for autonomous driving in intelligent roadside infrastr ucture,” in 2020 IEEE Intelligent Vehicles Symposium (IV), 2020, pp. 1337–13 42.  
+[b] Z. Zou, R. Zhang, S. Shen, G. Pandey, P. Chakravarty, A. Parchami, and H.  X. Liu, “Real-time full-stack traffic scene perception for autonomous driving  with roadside cameras,” in 2022 International Conference on Robotics and Aut omation (ICRA), 2022, pp. 890–896.  
+[c] W. Zimmer, J. Birkner, M. Brucker, H. Tung Nguyen, S. Petrovski, B. Wang,  and A. C. Knoll, “Infradet3d: Multi-modal 3d object detection based on roads ide infrastructure camera and lidar sensors,” in 2023 IEEE Intelligent Vehic les Symposium (IV), 2023, pp. 1–8.  
+[d] S. Wang, R. Pi, J. Li, X. Guo, Y. Lu, T. Li, and Y. Tian, “Object tracki ng based on the fusion of roadside lidar and camera data,” IEEE Transactions  on Instrumentation and Measurement, vol. 71, pp. 1–14, 2022.  [e] C. Nie, Z. Ju, Z. Sun, and H. Zhang, “3d object detection and tracking b ased on lidar-camera fusion and imm-ukf algorithm towards highway driving,”  IEEE Transactions on Emerging Topics in Computational Intelligence, vol. 7, n o. 4, pp. 1242–1252, 2023. 
+C. 1-3  
+3. In Section 3, the description of the deep learning and detection models is  limited to a few sentences, leaving it unclear whether these models are direc tly adopted from existing work or include novel improvements.  
+R. 1.3  
+We have added a description to the end of Section III-C to explicitly state  that we directly adopted existing deep-learning architectures without modifi cation.  
+  
+(End of Section III-C)  
+This study uses those models without modeling their architectures.  
+C. 1-4  
+4. In Section 4, Subsection D, the introduction of the three evaluation metri cs contains considerable redundant content. It is recommended to consolidate  or streamline these descriptions to improve clarity and conciseness. 
+R. 1-4  
+We have modified lines 3-24 of the first paragraph in Section IV-D to consol idate the descriptions of evaluation conditions and table structures common  to all metrics. Consequently, we have simplified the descriptions in lines 7 -21 of the first paragraph in Section IV-D-1, lines 7-16 of the first paragr aph in Section IV-D-2 and lines 7-17 of the first paragraph in Section IV-D 3 by removing redundant content and referring to the general definitions est ablished in Section IV-D.  
+  
+(Lines 3-24, first paragraph, Section IV-D)  
+The first three metrics evaluate tracking performance, whereas the fourth met ric evaluates computational performance. For the first three metrics, we eval uated the effects of two experimental conditions: detection failure and MMV s peed. The results for the first three metrics are presented using two types o f tables depending on the evaluation metric. For the first metric, the number  
+of detected MMVs, the rows represent the experimental conditions, whereas the  columns correspond to the resulting detection statistics. For the latter two  metrics, the total number of IDs and the number of ID swaps, the rows represe nt the frame length and tracking method, while the columns correspond to the  values of the experimental conditions. For the processing time, the results a re presented separately for detection and tracking. The rows represent the de tection model or tracking method and the number of MMVs, while the columns re port the mean and interquartile range (IQR) of the processing time. The speci fic definitions of each metric are detailed below. 
+(Lines 7-21, first paragraph, Section IV-D-1) 
+The results are presented using the table structure as described in Section I V-D. For the detection failure condition, the table includes columns for both  the number of detected MMVs and the number of false negatives. For the MMV sp eed condition, the table includes a column only for the number of detected MM Vs.  
+(Lines 7-16, first paragraph, Section IV-D-2) 
+The results are presented using the table structure as described in Section I V-D.  
+(Lines 7-17, first paragraph, Section IV-D-3) 
+Similar to the total number of IDs, the results are presented using the table  structure described in Section IV-D. 
+C. 1-5  
+5. The three metrics proposed in Section 4 are designed to evaluate the model 's detection performance. However, the manuscript does not address metrics or  methods for assessing the model's tracking performance, which is a critical a spect of the study.  
+R. 1-5  
+We have modified the beginning of the first paragraph in Sections IV-D-1, IV -D-2 and IV-D-3 to explicitly state the rationale for selecting each metric  as an assessment of tracking performance.  
+  
+(Beginning of first paragraph, Section IV-D-1)  
+The number of detected MMVs was selected to evaluate whether target MMVs were  continuously tracked without being lost during tracking.  
+(Beginning of first paragraph, Section IV-D-2)  
+The total number of IDs was selected to quantitatively evaluate tracking frag mentation, which measures the number of incorrectly generated IDs for a singl e object that should ideally maintain a unique ID.  
+(Beginning of first paragraph, Section IV-D-3)  
+The number of ID swaps was selected to evaluate ID consistency, to check whet her IDs are incorrectly switched with other MMVs during situations where MMVs  are in close proximity.  
+C. 1-6  
+6. The detection results shown in Figure 7 for the three methods appear ident ical. It is recommended to revise the figure to accurately reflect the differ ences between the methods or provide a clear explanation for the similarity t o avoid potential confusion or misinterpretation. 
+R. 1-6  
+We have deleted Fig. 6 and Fig. 7. Accordingly, we have deleted the third an d fourth paragraphs in Section V-D, which previously explained the figures.  We have added Table VIII to show the tracking results of the nine MMVs more  clearly. We have also added a fifth paragraph in Section V-D to provide a de scription of the table. In the paragraph, we explicitly state that the resu
+lts for the three tracking methods are identical, including the total number  of IDs and the frequency of ID swaps.  
+  
+(Fifth paragraph, Section V-D)  
+Table VIII shows the tracking results for the nine-MMV scenario. Each row rep resents a tracking method, while the columns list the total number of IDs and  the number of ID swaps, as described in Section IV-D. The number of past fram es used for reference was set to 10. As shown in the table, the results for a ll the tracking methods were identical. Specifically, the total number of IDs  was equal to the actual number of MMVs, and no ID swaps occurred during the e valuation.  
+
+C1-7  
+7. The paper does not adequately justify the necessity of using multiple LiDA R sensors for detection and tracking. It remains unclear whether a single LiD AR sensor could achieve comparable performance. A discussion or experimental  comparison demonstrating the advantages of multi-LiDAR over single-LiDAR conf igurations would strengthen the rationale for the proposed approach. 
+R. 1-7  
+We have modified the lines 7-19 of sixth paragraph in Section I to explicitl y state that the superiority of multi-LiDAR systems over single-sensor setup s is an established premise based on prior research. By clarifying the premi se, we treat the multi-LiDAR configuration as a prerequisite for our study r ather than performing a comparative evaluation between single- and multi-sen sor setups.  
+  
+(Lines 7-19, sixth paragraph, Section I)  
+The proposed system is based on the established principle that multi-LiDAR se tups outperform single-LiDAR setups in object detection tasks. Integrating mu ltiple sensors is essential for infrastructure monitoring to resolve blind sp ots and ensure sufficient point density for accurate detection [f, g]. The mu lti-LiDAR setup is therefore adopted as a fundamental prerequisite for tracki
+ng MMVs, and the evaluation addresses tracking performance in the integrated  multi-LiDAR environment rather than comparing single- and multi-sensor config urations.  
+[f] L. Kloeker, C. Geller, A. Kloeker, and L. Eckstein, “High-precision digi tal traffic recording with multi-lidar infrastructure sensor setups,” in 2020  IEEE 23rd International Conference on Intelligent Transportation Systems (ITS C), 2020, pp. 1–8.  
+[g] Y. Fukiya, G. Trovato, T. Kudo, and R. Shinkuma, “Detection of micro-mob ility vehicle with thin frame by human-vehicle integrated deep-learning mode l,” in 2023 IEEE 12th GCCE. IEEE, 2023, pp. 1073–1074.  
+Additional Questions:  
+1. Is the paper technically sound? If no, why not?: Yes  
+2. Is the coverage of the topic sufficiently comprehensive and balanced?: Yes  
+3. How would you describe the technical depth of the paper?: Appropriate for  the generally knowledgeable individual Working in the Field or a Related Fiel d  
+4. How would you rate the technical novelty of the paper?: Somewhat novel  1. Is the topic appropriate for publication in these transactions?: Yes  2. Is the topic important to colleagues working in the field?: Yes  
+1. How would you rate the overall organization of the paper?: Could be improv ed  
+2. Are the title and abstract satisfactory?: Yes  
+title and abstract explanation:  
+3. Is the length of the paper appropriate? If not, recommend how the length o f the paper should be amended, including a possible target length for the fin al manuscript.: Yes  
+length of the paper recommendation: 
+4. Are symbols, terms, and concepts adequately defined?: Yes  5. How do you rate the English usage?: Satisfactory  
+6. Rate the Bibliography?: Satisfactory  
+1. How would you rate the technical contents of the paper?: fair  2. How would you rate the novelty of the paper?: slightly novel  
+3. How would you rate the "literary" presentation of the paper?: mostly acces sible  
+4. How would you rate the appropriateness of this paper for publication in th is IEEE Transactions?: good match  
+If you are suggesting additional references they must be entered in the text  box provided. All suggestions must include full bibliographic information plu s a DOI. Please note: requiring primarily one’s own papers to be cited is c onsidered to be citation coercion, an ethically questionable practice accord ing to IEEE Publication Services and Products Board Operations Manual. It al so violates the reviewer’s anonymity. : NA 
+Would you recommend this paper for a Best Paper Award?: No  
+Reviewer: 2  
+Recommendation: Reject (Paper is seriously flawed; do not encourage resubmiss ion.)  
+Comments:  
+C. 2-1  
+We thank the authors for submitting their work to the IEEE Sensors Journal an d for addressing an important problem in urban mobility monitoring. However,  the paper lacks a clear articulation of novelty compared to existing multi-Li DAR and deep-learning-based tracking systems. While the application to micro-
+mobility vehicles (MMVs) is relevant, the proposed architecture appears to be  a straightforward integration of standard components (e.g., point cloud trans formation, edge aggregation, and deep-learning detection) without introducing  significant technical innovation. Therefore, the contribution does not meet t he novelty threshold expected by the journal.  
+R. 2-1  
+We have modified the descriptions so as to clarify the technical innovation  of our work. Please see the details in R. 0-1  
+C. 2-2  
+1. We appreciate the authors’ effort in designing and testing a multi-LiDAR based tracking system for MMVs. However, the experimental results raise conce rns regarding evaluation rigor. The reported detection accuracy (approaching  100% for multiple models) is unusually high and not sufficiently explained. T here is no clear description of the dataset's scale, labeling quality, or eva luation methodology, which compromises the credibility of the findings. These  
+issues must be addressed to ensure scientific reliability and reproducibilit y.  
+R. 2-2  
+We have added the descriptions to the fourth paragraph in Section IV to clar ify the methodology for creating ground truth labels. Furthermore, we have a dded a third paragraph in Section V-A to explain the reasons for achieving  high detection accuracy.  
+  
+(Fourth paragraph, Section IV-B)  
+Ground-truth (GT) labels were manually generated for the acquired 3D point-cl oud data. The labeling process was performed using the Open3D [h] library in  Python. 3D bounding boxes were manually annotated around each MMV across all  recorded frames. The generated GT labels were saved in the KITTI 3D object de tection format [i]. 
+(Third paragraph, Section V-A)  
+The high accuracy is attributable to the following reasons. First, the evalua tion targets object detection rather than object classification. Second, MMVs  maintain a rigid shape, unlike pedestrians who exhibit non-rigid deformations  caused by limb movements or variations in clothing. Third, the consistent geo
+metric characteristics of MMVs facilitates feature learning, provided that su fficient training data are available.  
+[h] Q.-Y. Zhou, J. Park, and V. Koltun, “Open3D: A modern library for 3D  data processing,” arXiv:1801.09847, 2018.  
+[i] A. Geiger, P. Lenz, C. Stiller, and R. Urtasun, “3d object detection  evaluation 2017,” https://www.cvlibs.net/datasets/kitti/eval object.php?  obj benchmark=3d, accessed on Mar. 5, 2026.  
+C. 2-3  
+2. The evaluation appears to be conducted in a highly controlled and limited  environment, with no clear indication of scene complexity, sensor placement v ariability, lighting or weather conditions, or pedestrian interference. This  lack of environmental diversity questions the system’s generalizability to a ctual urban deployments. A broader and more realistic experimental design is  essential to validate the proposed system's practical applicability.  
+R. 2-3  
+To provide a clear indication of scene complexity and demonstrate the system 's practical applicability in real-world environments, we have added descrip tions to lines 7-15 of the first paragraph in Section V-D.    
+(Lines 7-15 , first paragraph, Section V-D)  
+The simultaneous operation of the nine MMVs created a challenging tracking en vironment due to frequent mutual occlusions. Since the LiDAR units were insta lled at a height of 1.3 m, which is comparable to the height of the MMVs with  riders, adjacent vehicles often blocked the LiDAR beams. As a result, the ava ilability and density of the point-cloud data varied substantially over time,  and some MMVs were captured by only one or two of the four LiDAR sensors in c ertain frames.  
+C. 2-4  
+3. The paper does not convincingly demonstrate end-to-end integration. There  is limited evidence that the system was tested holistically in a real-time se tup. Important aspects such as latency, synchronization challenges, data loss  handling, and computational cost on edge devices are not discussed. These pra ctical considerations are critical for real-world deployment of sensor-based  systems and are expected in this journal. 
+R. 2-4  
+We have added Section V-E to evaluate the real-time performance of the propo sed system. Section V-E includes processing times for both detection and tra cking. Along with the addition of the experimental results in Section V-E, w e have added Table IX and Table X, which show the processing times for detec tion and tracking, respectively. Furthermore, we have added a description to  
+the end of the sixth paragraph in Section I to clarify that the proposed edg e-computing system is verified for its real-time processing capabilities wit hin this study.  
+  
+(End of sixth paragraph, Section I)  
+Third, the real-time capability evaluation measures the processing speed requ ired for the MODT pipeline and verifies whether the proposed edge-computing s ystem satisfies real-time processing requirements.
+
+
+Additional Questions:  
+1. Is the paper technically sound? If no, why not?: No (explain)  
+2. Is the coverage of the topic sufficiently comprehensive and balanced?: Imp ortant information is missing or superficially treated.  
+3. How would you describe the technical depth of the paper?: Appropriate for  the generally knowledgeable individual Working in the Field or a Related Fiel d  
+4. How would you rate the technical novelty of the paper?: Not novel  1. Is the topic appropriate for publication in these transactions?: No  2. Is the topic important to colleagues working in the field?: Moderately  1. How would you rate the overall organization of the paper?: Poor  2. Are the title and abstract satisfactory?: No (explain)  title and abstract explanation:  
+3. Is the length of the paper appropriate? If not, recommend how the length o f the paper should be amended, including a possible target length for the fin al manuscript.: Yes  
+length of the paper recommendation:  
+4. Are symbols, terms, and concepts adequately defined?: Not always  5. How do you rate the English usage?: Satisfactory  
+6. Rate the Bibliography?: Unsatisfactory  
+1. How would you rate the technical contents of the paper?: poor  2. How would you rate the novelty of the paper?: not novel 
+3. How would you rate the "literary" presentation of the paper?: partially ac cessible  
+4. How would you rate the appropriateness of this paper for publication in th is IEEE Transactions?: weak match  
+If you are suggesting additional references they must be entered in the text  box provided. All suggestions must include full bibliographic information plu s a DOI. Please note: requiring primarily one’s own papers to be cited is c onsidered to be citation coercion, an ethically questionable practice accord ing to IEEE Publication Services and Products Board Operations Manual. It al so violates the reviewer’s anonymity. : N/A 
+Would you recommend this paper for a Best Paper Award?: No
