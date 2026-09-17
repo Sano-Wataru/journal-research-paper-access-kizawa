@@ -14,13 +14,13 @@ Based on the enclosed set of reviews, found at the bottom of this letter, thi s 
 C. 0-1  
 The paper lacks a clear articulation of novelty compared to existing multi-Li DAR and deep-learning-based tracking systems. While the application to micro mobility vehicles (MMVs) is relevant, the proposed architecture appears to be  a straightforward integration of standard components. 
 R. 0-1  
-To clarify the novelty compared to existing multi-LiDAR and deep-learning-ba sed tracking systems, we have modified all of the fifth paragraph and lines  19-40 of the sixth paragraph in Section I. While the architecture may appear 
+To clarify the novelty compared to existing multi-LiDAR and deep-learning-ba sed tracking systems, we have modified all of the fifth paragraph and lines  19-40 of the sixth paragraph in Section 1. While the architecture may appear 
 to be a straightforward integration of standard components, these revisions  clarify that the system is specifically designed to handle the unique agilit y of MMVs and the resultant vulnerability to network-induced data loss—chall enges that have not been quantitatively evaluated in prior research.  
   
-(Fifth paragraph, Section I)  
+(Fifth paragraph, Section 1)  
 The prior works mentioned in the previous paragraph have advanced the trackin g accuracy and robustness of LiDAR systems for tracking multiple dynamic obje cts. However, the prior works have addressed targets with highly linear motio n, such as passenger vehicles and trucks, or low-speed subjects like pedestri ans. MMVs present a unique tracking challenge: they move faster than pedestri ans yet possess the agility to execute sudden, sharp turns, unlike standard a utomobiles. In a network-integrated multi-LiDAR system, point-cloud data loss  
 during network transmission can cause detection failures, and the MMV-specifi c motion characteristics described above make tracking particularly vulnerabl e to such failures. Nevertheless, the aforementioned works have not quantitat ively evaluated tracking performance for MMVs under intermittent point-cloud  loss.  
-(Lines 19-40, sixth paragraph, Section I)  
+(Lines 19-40, sixth paragraph, Section 1)  
 This study addresses the feasibility of real-time multi-LiDAR MODT specifical ly for MMVs, which have a unique agility different from other moving objects  as mentioned above. The evaluation is conducted from three perspectives: robu stness, scalability, and real-time capability. First, the robustness evaluati on assesses the performance of the proposed system under practical deployment  
 challenges using experimental data collected in real-world environments, incl uding detection failures caused by communication issues in network-integrated  systems and variations in MMV speed. Second, the scalability evaluation asses ses the performance of the proposed system as the MMV density increases withi n a fixed spatial area. Third, the real-time capability evaluation measures t he processing speed required for the MODT pipeline and verifies whether the p roposed edge-computing system satisfies real-time processing requirements.  
 While the decision of the Associate Editor may not be positive, based on the  comments of the reviewers, you may wish to consider and implement changes sug gested in these comments. The current decision does not bias any future submi ssion of a rework as a new manuscript; however, if received by this journal,  this new manuscript will be moved to peer review only if it shows noticeable  changes and improvements compared to the currently rejected manuscript. 
@@ -45,8 +45,8 @@ We have modified the descriptions so as to clarify the novelty and significa nce
 C. 1-2  
 2. The study focuses on using multiple LiDAR sensors for detecting and tracki ng micro-mobility vehicles. However, the related work section includes discus sions on LiDAR and camera fusion techniques, which appear to have limited rel evance to the core research topic of the paper.  
 R. 1-2  
-We have modified Section II-B so as to reduce the volume of descriptions of  camera and LiDAR-camera fusion techniques. We have deleted detailed discussi ons of fusion technologies that are less relevant to the core research topic  and reduced the text length to maintain focus on the multi-LiDAR system.    
-(Section II-B)  
+We have modified Section 2.2 so as to reduce the volume of descriptions of  camera and LiDAR-camera fusion techniques. We have deleted detailed discussi ons of fusion technologies that are less relevant to the core research topic  and reduced the text length to maintain focus on the multi-LiDAR system.    
+(Section 2.2)  
  Although our system addresses LiDAR-only tracking, object tracking has been  extensively studied using camera-based approaches and sensor fusion technique s.  
  Regarding camera-based infrastructure monitoring, Fleck et al.[a] utilized  RGB cameras with Kalman filter to generate high-precision reference trajector ies for autonomous vehicles, achieving lane-level accuracy. Similarly, Zou et  al. [b] developed a full-stack framework utilizing roadside cameras for objec t detection and 3D position estimation, enabling precise cross-camera informa tion fusion and traffic monitoring.  
  To further enhance detection accuracy, several studies have explored fusing  LiDAR and camera data. Zimmer et al. [c] introduced InfraDet3D, a multimodal  system employing early and late fusion strategies to improve trajectory recon struction performance beyond single-sensor systems. Wang et al. [d] presented  a method integrating roadside LiDAR and cameras, leveraging attention mechani sms and adaptive weighting to extract high-resolution trajectories. Additiona lly, Nie et al. [e] presented DTFI for highway scenarios, which combines voxe l-based 3D detection with an interactive multi-model unscented Kalman filter  (IMM-UKF) to ensure real-time performance. While the aforementioned works reg arding fusion methods offer high accuracy, they require complex calibration a nd heterogeneous data handling, contrasting with our study, which addresses m ulti-LiDAR networks for micro-mobility tracking. 
@@ -57,50 +57,50 @@ We have modified Section II-B so as to reduce the volume of descriptions of  cam
 C. 1-3  
 3. In Section 3, the description of the deep learning and detection models is  limited to a few sentences, leaving it unclear whether these models are direc tly adopted from existing work or include novel improvements.  
 R. 1.3  
-We have added a description to the end of Section III-C to explicitly state  that we directly adopted existing deep-learning architectures without modifi cation.  
+We have added a description to the end of Section 3.3 to explicitly state  that we directly adopted existing deep-learning architectures without modifi cation.  
   
-(End of Section III-C)  
+(End of Section 3.3)  
 This study uses those models without modeling their architectures.  
 C. 1-4  
 4. In Section 4, Subsection D, the introduction of the three evaluation metri cs contains considerable redundant content. It is recommended to consolidate  or streamline these descriptions to improve clarity and conciseness. 
 R. 1-4  
-We have modified lines 3-24 of the first paragraph in Section IV-D to consol idate the descriptions of evaluation conditions and table structures common  to all metrics. Consequently, we have simplified the descriptions in lines 7 -21 of the first paragraph in Section IV-D-1, lines 7-16 of the first paragr aph in Section IV-D-2 and lines 7-17 of the first paragraph in Section IV-D 3 by removing redundant content and referring to the general definitions est ablished in Section IV-D.  
+We have modified lines 3-24 of the first paragraph in Section 4.4 to consol idate the descriptions of evaluation conditions and table structures common  to all metrics. Consequently, we have simplified the descriptions in lines 7 -21 of the first paragraph in Section 4.4.1, lines 7-16 of the first paragr aph in Section 4.4.2 and lines 7-17 of the first paragraph in Section 4.4.3 by removing redundant content and referring to the general definitions est ablished in Section 4.4.  
   
-(Lines 3-24, first paragraph, Section IV-D)  
+(Lines 3-24, first paragraph, Section 4.4)  
 The first three metrics evaluate tracking performance, whereas the fourth met ric evaluates computational performance. For the first three metrics, we eval uated the effects of two experimental conditions: detection failure and MMV s peed. The results for the first three metrics are presented using two types o f tables depending on the evaluation metric. For the first metric, the number  
 of detected MMVs, the rows represent the experimental conditions, whereas the  columns correspond to the resulting detection statistics. For the latter two  metrics, the total number of IDs and the number of ID swaps, the rows represe nt the frame length and tracking method, while the columns correspond to the  values of the experimental conditions. For the processing time, the results a re presented separately for detection and tracking. The rows represent the de tection model or tracking method and the number of MMVs, while the columns re port the mean and interquartile range (IQR) of the processing time. The speci fic definitions of each metric are detailed below. 
-(Lines 7-21, first paragraph, Section IV-D-1) 
-The results are presented using the table structure as described in Section I V-D. For the detection failure condition, the table includes columns for both  the number of detected MMVs and the number of false negatives. For the MMV sp eed condition, the table includes a column only for the number of detected MM Vs.  
-(Lines 7-16, first paragraph, Section IV-D-2) 
-The results are presented using the table structure as described in Section I V-D.  
-(Lines 7-17, first paragraph, Section IV-D-3) 
-Similar to the total number of IDs, the results are presented using the table  structure described in Section IV-D. 
+(Lines 7-21, first paragraph, Section 4.4.1) 
+The results are presented using the table structure as described in Section 4.4. For the detection failure condition, the table includes columns for both  the number of detected MMVs and the number of false negatives. For the MMV sp eed condition, the table includes a column only for the number of detected MM Vs.  
+(Lines 7-16, first paragraph, Section 4.4.2) 
+The results are presented using the table structure as described in Section 4.4.  
+(Lines 7-17, first paragraph, Section 4.4.3) 
+Similar to the total number of IDs, the results are presented using the table  structure described in Section 4.4. 
 C. 1-5  
 5. The three metrics proposed in Section 4 are designed to evaluate the model 's detection performance. However, the manuscript does not address metrics or  methods for assessing the model's tracking performance, which is a critical a spect of the study.  
 R. 1-5  
-We have modified the beginning of the first paragraph in Sections IV-D-1, IV -D-2 and IV-D-3 to explicitly state the rationale for selecting each metric  as an assessment of tracking performance.  
+We have modified the beginning of the first paragraph in Sections 4.4.1, 4.4.2 and 4.4.3 to explicitly state the rationale for selecting each metric  as an assessment of tracking performance.  
   
-(Beginning of first paragraph, Section IV-D-1)  
+(Beginning of first paragraph, Section 4.4.1)  
 The number of detected MMVs was selected to evaluate whether target MMVs were  continuously tracked without being lost during tracking.  
-(Beginning of first paragraph, Section IV-D-2)  
+(Beginning of first paragraph, Section 4.4.2)  
 The total number of IDs was selected to quantitatively evaluate tracking frag mentation, which measures the number of incorrectly generated IDs for a singl e object that should ideally maintain a unique ID.  
-(Beginning of first paragraph, Section IV-D-3)  
+(Beginning of first paragraph, Section 4.4.3)  
 The number of ID swaps was selected to evaluate ID consistency, to check whet her IDs are incorrectly switched with other MMVs during situations where MMVs  are in close proximity.  
 C. 1-6  
 6. The detection results shown in Figure 7 for the three methods appear ident ical. It is recommended to revise the figure to accurately reflect the differ ences between the methods or provide a clear explanation for the similarity t o avoid potential confusion or misinterpretation. 
 R. 1-6  
-We have deleted Fig. 6 and Fig. 7. Accordingly, we have deleted the third an d fourth paragraphs in Section V-D, which previously explained the figures.  We have added Table VIII to show the tracking results of the nine MMVs more  clearly. We have also added a fifth paragraph in Section V-D to provide a de scription of the table. In the paragraph, we explicitly state that the resu
+We have deleted Fig. 6 and Fig. 7. Accordingly, we have deleted the third an d fourth paragraphs in Section 5.4, which previously explained the figures.  We have added Table VIII to show the tracking results of the nine MMVs more  clearly. We have also added a fifth paragraph in Section 5.4 to provide a de scription of the table. In the paragraph, we explicitly state that the resu
 lts for the three tracking methods are identical, including the total number  of IDs and the frequency of ID swaps.  
   
-(Fifth paragraph, Section V-D)  
-Table VIII shows the tracking results for the nine-MMV scenario. Each row rep resents a tracking method, while the columns list the total number of IDs and  the number of ID swaps, as described in Section IV-D. The number of past fram es used for reference was set to 10. As shown in the table, the results for a ll the tracking methods were identical. Specifically, the total number of IDs  was equal to the actual number of MMVs, and no ID swaps occurred during the e valuation.  
+(Fifth paragraph, Section 5.4)  
+Table VIII shows the tracking results for the nine-MMV scenario. Each row rep resents a tracking method, while the columns list the total number of IDs and  the number of ID swaps, as described in Section 4.4. The number of past fram es used for reference was set to 10. As shown in the table, the results for a ll the tracking methods were identical. Specifically, the total number of IDs  was equal to the actual number of MMVs, and no ID swaps occurred during the e valuation.  
 
 C1-7  
 7. The paper does not adequately justify the necessity of using multiple LiDA R sensors for detection and tracking. It remains unclear whether a single LiD AR sensor could achieve comparable performance. A discussion or experimental  comparison demonstrating the advantages of multi-LiDAR over single-LiDAR conf igurations would strengthen the rationale for the proposed approach. 
 R. 1-7  
-We have modified the lines 7-19 of sixth paragraph in Section I to explicitl y state that the superiority of multi-LiDAR systems over single-sensor setup s is an established premise based on prior research. By clarifying the premi se, we treat the multi-LiDAR configuration as a prerequisite for our study r ather than performing a comparative evaluation between single- and multi-sen sor setups.  
+We have modified the lines 7-19 of sixth paragraph in Section 1 to explicitl y state that the superiority of multi-LiDAR systems over single-sensor setup s is an established premise based on prior research. By clarifying the premi se, we treat the multi-LiDAR configuration as a prerequisite for our study r ather than performing a comparative evaluation between single- and multi-sen sor setups.  
   
-(Lines 7-19, sixth paragraph, Section I)  
+(Lines 7-19, sixth paragraph, Section 1)  
 The proposed system is based on the established principle that multi-LiDAR se tups outperform single-LiDAR setups in object detection tasks. Integrating mu ltiple sensors is essential for infrastructure monitoring to resolve blind sp ots and ensure sufficient point density for accurate detection [f, g]. The mu lti-LiDAR setup is therefore adopted as a fundamental prerequisite for tracki
 ng MMVs, and the evaluation addresses tracking performance in the integrated  multi-LiDAR environment rather than comparing single- and multi-sensor config urations.  
 [f] L. Kloeker, C. Geller, A. Kloeker, and L. Eckstein, “High-precision digi tal traffic recording with multi-lidar infrastructure sensor setups,” in 2020  IEEE 23rd International Conference on Intelligent Transportation Systems (ITS C), 2020, pp. 1–8.  
@@ -134,11 +134,11 @@ C. 2-2
 1. We appreciate the authors’ effort in designing and testing a multi-LiDAR based tracking system for MMVs. However, the experimental results raise conce rns regarding evaluation rigor. The reported detection accuracy (approaching  100% for multiple models) is unusually high and not sufficiently explained. T here is no clear description of the dataset's scale, labeling quality, or eva luation methodology, which compromises the credibility of the findings. These  
 issues must be addressed to ensure scientific reliability and reproducibilit y.  
 R. 2-2  
-We have added the descriptions to the fourth paragraph in Section IV to clar ify the methodology for creating ground truth labels. Furthermore, we have a dded a third paragraph in Section V-A to explain the reasons for achieving  high detection accuracy.  
+We have added the descriptions to the fourth paragraph in Section 4 to clar ify the methodology for creating ground truth labels. Furthermore, we have a dded a third paragraph in Section 5.1 to explain the reasons for achieving  high detection accuracy.  
   
-(Fourth paragraph, Section IV-B)  
+(Fourth paragraph, Section 4.2)  
 Ground-truth (GT) labels were manually generated for the acquired 3D point-cl oud data. The labeling process was performed using the Open3D [h] library in  Python. 3D bounding boxes were manually annotated around each MMV across all  recorded frames. The generated GT labels were saved in the KITTI 3D object de tection format [i]. 
-(Third paragraph, Section V-A)  
+(Third paragraph, Section 5.1)  
 The high accuracy is attributable to the following reasons. First, the evalua tion targets object detection rather than object classification. Second, MMVs  maintain a rigid shape, unlike pedestrians who exhibit non-rigid deformations  caused by limb movements or variations in clothing. Third, the consistent geo
 metric characteristics of MMVs facilitates feature learning, provided that su fficient training data are available.  
 [h] Q.-Y. Zhou, J. Park, and V. Koltun, “Open3D: A modern library for 3D  data processing,” arXiv:1801.09847, 2018.  
@@ -146,16 +146,16 @@ metric characteristics of MMVs facilitates feature learning, provided that su ff
 C. 2-3  
 2. The evaluation appears to be conducted in a highly controlled and limited  environment, with no clear indication of scene complexity, sensor placement v ariability, lighting or weather conditions, or pedestrian interference. This  lack of environmental diversity questions the system’s generalizability to a ctual urban deployments. A broader and more realistic experimental design is  essential to validate the proposed system's practical applicability.  
 R. 2-3  
-To provide a clear indication of scene complexity and demonstrate the system 's practical applicability in real-world environments, we have added descrip tions to lines 7-15 of the first paragraph in Section V-D.    
-(Lines 7-15 , first paragraph, Section V-D)  
+To provide a clear indication of scene complexity and demonstrate the system 's practical applicability in real-world environments, we have added descrip tions to lines 7-15 of the first paragraph in Section 5.4.    
+(Lines 7-15 , first paragraph, Section 5.4)  
 The simultaneous operation of the nine MMVs created a challenging tracking en vironment due to frequent mutual occlusions. Since the LiDAR units were insta lled at a height of 1.3 m, which is comparable to the height of the MMVs with  riders, adjacent vehicles often blocked the LiDAR beams. As a result, the ava ilability and density of the point-cloud data varied substantially over time,  and some MMVs were captured by only one or two of the four LiDAR sensors in c ertain frames.  
 C. 2-4  
 3. The paper does not convincingly demonstrate end-to-end integration. There  is limited evidence that the system was tested holistically in a real-time se tup. Important aspects such as latency, synchronization challenges, data loss  handling, and computational cost on edge devices are not discussed. These pra ctical considerations are critical for real-world deployment of sensor-based  systems and are expected in this journal. 
 R. 2-4  
-We have added Section V-E to evaluate the real-time performance of the propo sed system. Section V-E includes processing times for both detection and tra cking. Along with the addition of the experimental results in Section V-E, w e have added Table IX and Table X, which show the processing times for detec tion and tracking, respectively. Furthermore, we have added a description to  
-the end of the sixth paragraph in Section I to clarify that the proposed edg e-computing system is verified for its real-time processing capabilities wit hin this study.  
+We have added Section 5.5 to evaluate the real-time performance of the propo sed system. Section 5.5 includes processing times for both detection and tra cking. Along with the addition of the experimental results in Section 5.5, w e have added Table IX and Table X, which show the processing times for detec tion and tracking, respectively. Furthermore, we have added a description to  
+the end of the sixth paragraph in Section 1 to clarify that the proposed edg e-computing system is verified for its real-time processing capabilities wit hin this study.  
   
-(End of sixth paragraph, Section I)  
+(End of sixth paragraph, Section 1)  
 Third, the real-time capability evaluation measures the processing speed requ ired for the MODT pipeline and verifies whether the proposed edge-computing s ystem satisfies real-time processing requirements.
 
 

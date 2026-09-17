@@ -1,0 +1,31 @@
+---
+description: 査読者への Reply letter（C./R. 項目）の書き方
+globs: review/letter/**,review/response/**
+alwaysApply: false
+---
+
+# Reply letter
+
+`review/letter/reply_letter_reference.txt` の型に合わせる。`C. X-Y` の直後に `R. X-Y` を書く。
+
+## Reply の構成
+
+各 Reply は次の順で書く。基本形に必要な事項だけを述べる。不要な文は入れない。
+
+1. 何をしたか。動詞は `modified` / `added` / `deleted` に固定する。他の動詞は使わない。
+2. どこを直したか（Section、paragraph、行番号）
+3. なぜそうしたか（コメントへの直接回答）
+4. 必要なら、修正後の本文を引用する。引用の直前に `(Location)` を置く。`\deleted` / `\revised` は付けない。
+5. 引用した文献は、新規追加でも既存文献の新規引用箇所でも、引用ブロックの直後に書誌情報を書く。形式は `reply_letter_reference.txt` に合わせる。
+
+1 と 2 は常に別文にする。一文にまとめない。
+
+同じ修正で複数コメントに答える場合は、詳細は一箇所に書き、他は `Please see the details in R. X-Y.` で参照する。
+
+## 文体
+
+- 主語は `We have ...` とする。
+- 箇所は具体的に書く。
+- Section の番号はローマ数字ではなくアラビア数字で書く。例: `Section V-A` → `Section 5.1`、`Section IV-D-1` → `Section 4.4.1`。
+- 不要な接続語・対比の修飾は使わない。
+- 引用と本文が重複しても、基本形の必須事項であればよい。
