@@ -228,9 +228,25 @@ For each frame, 3D point-cloud data are projected onto planes formed by pairs of
 C.2-6
 4) Regarding English grammer, please double-check your use of tenses in every sentence. Since the proposed method is written in the past tense, it is difficult to grasp what is proposed in this manuscript.
 R.2-6
-We have modified the order of the proposal and evaluation descriptions. We have modified the tense of the evaluation descriptions to the past tense.
+We have modified the order of the proposal and evaluation descriptions. We have modified the tense of the evaluation descriptions to the past tense. 
 We have modified lines 7-18 of the Abstract, lines 6-8 of the fourth paragraph in Section 1, lines 13-18 of the first paragraph in Section 4.1, the first paragraph in Section 4.2, lines 4-7 and lines 11-18 of the first paragraph in Section 4.3, lines 15-17 of the first paragraph in Section 4.5, lines 5-6 of the first paragraph in Section 4.4.4, lines 14-17 of the second paragraph in Section 4.4.4, and Section 6.
 We made this modification because the order of the proposal and the evaluation was mixed. Evaluation descriptions in the present tense made the proposed method appear to be written in the past tense.
+
+We have modified inconsistent hyphenation of compound terms throughout the manuscript. 
+- point clouds → point-clouds
+- activity-level → activity level
+- learning-video → learning video
+- short-video → short video
+- long-video → long video
+- feature-extraction → feature extraction
+- feature-vector → feature vector
+- feature-importance → feature importance
+- Data-acquisition → Data acquisition
+- LiDAR-sensor → LiDAR sensor
+- LiDAR-sensor-network → LiDAR sensor network
+- center-of-gravity → center of gravity
+- Physical-activity → Physical activity
+- Light-detection-and-ranging → Light detection and ranging
 
 (Lines 7-18, Abstract)
 Activity level is defined as a measure of learning efficiency during comprehension of meeting explanations and training content in offices.
